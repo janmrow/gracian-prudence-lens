@@ -1,0 +1,7 @@
+interface:
+  display_name: "Gracian Prudence Review"
+  short_description: "Prudent judgment for tense work situations"
+  default_prompt: "Use $gracian-prudence-review to review a concrete professional situation and choose one prudent next move."
+
+policy:
+  allow_implicit_invocation: true

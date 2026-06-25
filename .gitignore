@@ -1,0 +1,22 @@
+.DS_Store
+Thumbs.db
+
+*.log
+*.tmp
+*.temp
+
+# Local agent and eval outputs
+eval-workspace/
+evals-workspace/
+skill-workspace/
+iteration-*/
+outputs/
+timing.json
+grading.json
+benchmark.json
+feedback.json
+
+# Local environment files
+.env
+.env.*
+!.env.example
