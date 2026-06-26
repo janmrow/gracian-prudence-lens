@@ -1,0 +1,17 @@
+{
+  "name": "gracian-prudence-lens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format:check": "prettier --check \"**/*.{md,yml,yaml,json}\"",
+    "lint:md": "markdownlint-cli2",
+    "lint:skills": "node scripts/check-skills.mjs",
+    "check": "npm run format:check && npm run lint:md && npm run lint:skills",
+    "check:ci": "npm run check"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.18.1",
+    "prettier": "^3.6.2"
+  }
+}
