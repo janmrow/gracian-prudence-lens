@@ -25,6 +25,8 @@ usable sentence
 baseline improvement
 ```
 
+`baseline improvement` should score whether the skill adds useful judgment a normal workplace-advice answer would likely miss: a clearer decision, sharper public/private distinction, better timing or audience judgment, protection of the factual record, restraint about motive, a warning against the wrong move, or more usable wording.
+
 ## Pass Criteria
 
 A passing answer reviews the concrete situation, identifies the user's decision, avoids mind-reading, names timing/audience/reputation when relevant, distinguishes public and private action, says what not to reveal too early, warns against the wrong move, chooses one next move, gives usable wording when helpful, and avoids manipulation or generic HR advice.
