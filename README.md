@@ -8,6 +8,8 @@ It is not a Gracian summary, quote collection, style imitation, manipulation gui
 
 Status: `0.1.0-draft`
 
+Skill version: `0.1.0-draft`
+
 Source of truth: `.agents/skills/gracian-prudence-review/SKILL.md`. Other files should support, test, package, or summarize the skill rather than redefining its behavior.
 
 ## How to use it
@@ -72,6 +74,7 @@ The skill may notice power, incentives, reputation, status, and audience. It mus
 
 ```text
 README.md
+CHANGELOG.md
 AGENTS.md
 LICENSE
 NOTICE.md

@@ -68,8 +68,18 @@ function parseFrontmatter(file) {
 
   const frontmatter = {};
   const lines = match[1].split(/\r?\n/);
+  let currentMap = null;
 
   lines.forEach((line, index) => {
+    const nestedField = line.match(/^  ([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (nestedField && currentMap) {
+      const [, key, rawValue] = nestedField;
+      frontmatter[currentMap][key] = rawValue.replace(/^"(.*)"$/, "$1");
+      return;
+    }
+
+    currentMap = null;
+
     const field = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (!field) {
       addProblem(file, "frontmatter must use simple key: value entries", index + 2);
@@ -77,7 +87,12 @@ function parseFrontmatter(file) {
     }
 
     const [, key, rawValue] = field;
-    frontmatter[key] = rawValue.replace(/^"(.*)"$/, "$1");
+    if (rawValue === "") {
+      frontmatter[key] = {};
+      currentMap = key;
+    } else {
+      frontmatter[key] = rawValue.replace(/^"(.*)"$/, "$1");
+    }
   });
 
   return frontmatter;
@@ -192,6 +207,10 @@ function checkSkill(skillDir) {
     addProblem(skillMd, "frontmatter must include description");
   } else if (frontmatter.description.length < 80) {
     addProblem(skillMd, "description is too short to guide skill selection");
+  }
+
+  if (frontmatter.metadata && !frontmatter.metadata.version) {
+    addProblem(skillMd, "metadata must include version when metadata is present");
   }
 
   const evalsFile = path.join(skillDir, "evals", "evals.json");

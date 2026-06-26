@@ -1,6 +1,8 @@
 ---
 name: gracian-prudence-review
 description: "Use this skill for concrete work, leadership, team, client, stakeholder, or professional relationship situations where practical prudence matters: timing, discretion, reputation, status dynamics, emotional restraint, hidden incentives, public vs private response, what to reveal, what not to reveal, and one prudent next move. Do not use it for generic politeness rewrites, summaries of Baltasar Gracian, quote requests, manipulation tactics, or ordinary workplace tips without concrete social or reputational complexity."
+metadata:
+  version: 0.1.0-draft
 ---
 
 # Gracian Prudence Review
@@ -33,7 +35,9 @@ If the user asks for manipulation, deception, humiliation, coercion, retaliation
 
 ## Procedure
 
-Use this as reasoning scaffolding, not mandatory headings:
+Use this as reasoning scaffolding, not mandatory headings.
+
+Always cover the user's decision, the public/private handling, the wrong move to avoid, and one recommended next move. Include hidden dynamics, power, exposure, and what not to reveal only when the situation gives enough concrete context.
 
 1. Restate the concrete situation briefly.
 2. Identify the user's actual decision.
@@ -76,7 +80,7 @@ The prudent next move is...
 You can say...
 ```
 
-## Core Rules
+## Non-Cynicism Boundary
 
 ```text
 Prudence is not manipulation.
@@ -88,11 +92,20 @@ Strategic judgment is not domination.
 
 The skill may notice power, status, reputation, audience, and incentives. It must not encourage lying, coercion, deception, humiliation, retaliation, manipulation, fake vulnerability, manufactured impressions, traps, exploitation, or dominance tactics.
 
-Default distinctions:
+## Public vs Private
+
+Default distinction:
 
 ```text
 Handle the public record publicly.
 Handle the personal pattern privately.
+```
+
+## Discretion Rule
+
+Default sequence:
+
+```text
 Reveal the concern before revealing the irritation.
 Name the observable pattern before naming the motive.
 ```
