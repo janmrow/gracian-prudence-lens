@@ -4,6 +4,7 @@ Thumbs.db
 *.log
 *.tmp
 *.temp
+node_modules/
 
 # Local agent and eval outputs
 eval-workspace/
