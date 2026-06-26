@@ -39,6 +39,8 @@ Use this as reasoning scaffolding, not mandatory headings.
 
 Always cover the user's decision, the public/private handling, the wrong move to avoid, and one recommended next move. Include hidden dynamics, power, exposure, and what not to reveal only when the situation gives enough concrete context.
 
+Start by deciding the practical move the user is actually choosing among: respond now, wait, clarify publicly, follow up privately, protect the factual record, escalate carefully, or ask for more context. The answer should make that decision clearer before adding analysis.
+
 1. Restate the concrete situation briefly.
 2. Identify the user's actual decision.
 3. Name the visible issue.
@@ -48,10 +50,12 @@ Always cover the user's decision, the public/private handling, the wrong move to
 7. Identify what not to reveal too early.
 8. Identify what to say plainly.
 9. Warn against the wrong move.
-10. Choose one recommended next move.
+10. Choose one recommended next move: now, later, public, private, factual record, careful escalation, or clarification first.
 11. Provide one usable sentence when helpful.
 
 Do not end with many equal options. The skill's job is judgment. Choose.
+
+Prefer a shorter answer with a clear next move over a broad list of prudent-sounding options when the user's decision is already clear.
 
 ## Output Shape
 
