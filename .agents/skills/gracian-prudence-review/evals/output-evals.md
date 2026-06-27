@@ -165,6 +165,102 @@ Limit the review to wording, timing, audience, discretion, factual clarity, docu
 
 Disqualify answers that diagnose legal risk, advise bypassing formal process, or tell the user to hide facts.
 
+## OE010: Credit Misattribution
+
+Prompt:
+
+```text
+A coworker presented part of my work as if it was theirs during a leadership update. I need to correct the record without looking petty.
+```
+
+Expected direction:
+
+```text
+Restore the record calmly through contribution language, not accusation. Focus on the work, not the person's intent. Time the correction for when it adds context rather than contradiction.
+```
+
+Disqualify answers that assume deliberate theft without evidence, advise staying silent, recommend public accusation, ignore the leadership audience, or fail to provide usable wording.
+
+## OE011: Public Correction Of A Senior Person
+
+Prompt:
+
+```text
+A senior person said something inaccurate in a meeting. I need to correct it without making them defensive.
+```
+
+Expected direction:
+
+```text
+Correct the fact, not the person. Frame the correction as adding information, not contradicting authority. Do not wait until after the meeting if the inaccuracy affects a live decision.
+```
+
+Disqualify answers that advise silence when the fact affects a live decision, treat seniority as a reason not to correct, frame the correction as personal contradiction, or omit in-meeting wording.
+
+## OE012: Scope Creep From A Client
+
+Prompt:
+
+```text
+My client keeps adding small tasks outside scope. I want to push back without damaging the relationship.
+```
+
+Expected direction:
+
+```text
+Name the pattern as a scope question, not a personal boundary. Separate the relationship from the contract. Respond to the next out-of-scope request by making the trade-off visible rather than refusing.
+```
+
+Disqualify answers that treat the client as exploitative without evidence, advise silent compliance, recommend a blunt refusal, fail to make the trade-off visible, or omit usable client-facing wording.
+
+## OE013: Bypassed Channel
+
+Prompt:
+
+```text
+A stakeholder bypasses me and goes directly to my junior teammate with requests. I need to handle it without looking territorial.
+```
+
+Expected direction:
+
+```text
+Clarify the channel through the work, not through a territorial claim. Address the next instance by looping yourself in without making the stakeholder wrong. If the pattern continues, name it as a coordination issue.
+```
+
+Disqualify answers that assume a deliberate slight without evidence, recommend public correction of the stakeholder, put the junior teammate in the middle, say nothing about channel clarity, or frame the issue as personal ownership.
+
+## OE014: Emotional Timing
+
+Prompt:
+
+```text
+I am angry and want to send a sharp reply now, but I suspect waiting may be wiser.
+```
+
+Expected direction:
+
+```text
+Wait. Draft the reply but do not send it. Separate what is factually true from what is emotionally charged. Send only when the factual part is clean and the emotional charge has dropped.
+```
+
+Disqualify answers that encourage sending while angry, advise permanent silence, moralize about the anger, fail to separate facts from emotional charge, or omit a concrete waiting-period action.
+
+## OE015: Repeated Credit Misattribution By Manager
+
+Prompt:
+
+```text
+My manager repeatedly gives credit to another team for work my team did. I do not want to seem needy, but visibility is being affected.
+```
+
+Expected direction:
+
+```text
+Make the work visible through documentation and contribution language before the next credit opportunity arises. Address the pattern with the manager privately and specifically, not as a complaint about fairness.
+```
+
+Disqualify answers that treat the repeated pattern as a one-time omission, advise continued silence, recommend public correction of the manager, frame the issue mainly as fairness or feelings, or omit proactive visibility before the next credit opportunity.
+
 ## Recording Template
 
 ```text
