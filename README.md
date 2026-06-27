@@ -1,18 +1,26 @@
-# Gracian Prudence Lens
+# gracian-prudence-review
 
-A small agent skill for non-cynical strategic judgment in socially complex professional situations.
+An agent skill for non-cynical strategic judgment in socially complex professional situations.
 
-The skill is named `gracian-prudence-review`. It helps an agent choose one concrete, ethical next move when the best answer depends on timing, audience, discretion, reputation, status dynamics, emotional restraint, public vs private response, and what not to reveal too early.
+When the best next move depends on timing, audience, discretion, reputation, status dynamics, or whether to respond publicly or privately, this skill helps an agent choose one concrete, ethical action rather than a list of options.
 
-It is not a Gracian summary, quote collection, style imitation, manipulation guide, or generic HR advice generator.
+**It is not** a Gracian summary, quote collection, style imitation, manipulation guide, or generic HR advice generator.
 
-Status: `0.1.0-draft`
+The package is intentionally plain Markdown so it can be used or adapted across agent clients that support `SKILL.md`-based skills, including Codex-style repo skills and similar Claude Code, Gemini CLI, Cursor, or community workflows.
 
-Skill version: `0.1.0-draft`
+## When to reach for it
 
-Source of truth: `.agents/skills/gracian-prudence-review/SKILL.md`. Other files should support, test, package, or summarize the skill rather than redefining its behavior.
+Reach for `gracian-prudence-review` when a user describes a situation like:
 
-## How to use it
+- a senior colleague keeps challenging ideas, but only when the manager is present;
+- a client sends a tense message implying blame before the facts are clear;
+- a manager asks for honest feedback, but became defensive the last time;
+- a coworker receives credit for work that was not theirs;
+- an angry reply is drafted and ready to send.
+
+In each case the right move is not obvious, and the wrong move has a real cost. The skill's job is to make the decision clearer, not to moralize, list options, or assume bad intent.
+
+## Install
 
 The skill root is:
 
@@ -20,27 +28,31 @@ The skill root is:
 .agents/skills/gracian-prudence-review
 ```
 
-Copy that directory into the skills directory used by your agent client, or point the client at this repository if it supports loading skills in place. Exact installation paths vary by client.
+Copy that directory into the skills location used by your agent client, or point the client at this repository if it supports loading skills in place. Exact installation paths vary by client.
 
-Once installed, invoke it by asking for `gracian-prudence-review`, or by describing a concrete professional situation where timing, audience, discretion, reputation, status dynamics, or public vs private response changes the best next move.
+For Codex-style repo loading, keep the skill at:
 
-The file `.agents/skills/gracian-prudence-review/agents/openai.yaml` is optional OpenAI/Codex-facing metadata. It is not part of the minimal Agent Skills specification. `SKILL.md` remains the source of truth for behavior.
+```text
+.agents/skills/gracian-prudence-review/SKILL.md
+```
 
-## When to use it
+The file `.agents/skills/gracian-prudence-review/agents/openai.yaml` is optional Codex app metadata. `SKILL.md` is the source of truth for behavior.
 
-Use the skill when a user describes a concrete professional situation with social or reputational complexity, such as:
+## Invoke
 
-- public disagreement in front of a manager or client;
-- stakeholder pressure, blame, credit ambiguity, or ownership risk;
-- upward feedback or power asymmetry;
-- emotional escalation where timing and wording matter;
-- uncertainty about whether to respond publicly, privately, now, or later.
+**Explicit:** mention the skill by name.
 
-Do not use it for general leadership tips, ordinary politeness rewrites, literary explanation, quote requests, style imitation, or manipulation tactics.
+```text
+Review this through a Gracian-inspired prudence lens: [situation]
+```
 
-## Quality standard
+**Implicit:** describe the situation with concrete stakes. The skill activates when the prompt includes timing, audience, discretion, reputation, status dynamics, or public/private complexity.
 
-A good answer should leave the user with this result:
+If the situation is too thin, the skill asks one clarifying question instead of guessing.
+
+## What a good answer looks like
+
+A skill-guided answer should leave the user with:
 
 ```text
 I see the situation more clearly.
@@ -50,13 +62,20 @@ I know what to say.
 I understand the risk without becoming paranoid.
 ```
 
-The skill should improve on baseline model advice by adding situational judgment: visible issue vs possible hidden dynamic, audience, timing, reputation risk, public vs private distinction, discretion, one recommended next move, and one usable sentence when helpful.
+Concretely, a good answer identifies the user's actual decision, separates the visible issue from possible hidden dynamics, names timing and audience, says what not to reveal too early, warns against the wrong move, and chooses one recommended next move with one usable sentence when wording matters.
 
-## Evals
+## Baseline evidence
 
-The standard eval entry point is `.agents/skills/gracian-prudence-review/evals/evals.json`. It defines manual-draft test cases and assertions for future with-skill and without-skill runs.
+The skill has recorded paired baseline and with-skill comparisons for B001-B011 using unguided `gpt-5.5` responses as the baseline. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
 
-The companion files `trigger-queries.csv`, `output-evals.md`, and `baseline-notes.md` are human-readable planning notes. They do not record completed eval runs unless a dated run is explicitly added.
+Where the skill added the most value:
+
+- **Factual-record protection**: client blame and formal-consequence cases stayed closer to what belongs in the record versus what belongs privately.
+- **Motive restraint**: credit ambiguity and manipulation-refusal cases named hidden dynamics as possibilities, not facts.
+- **Public/private sequencing**: meeting challenges and bypassed-channel cases separated what to handle in the room from what to follow up privately.
+- **Emotional timing**: angry-reply cases named what not to reveal, not just whether to wait.
+
+Where baseline was already strong, such as scope pushback and senior correction, the skill improved compression and decision clarity, but the gap was modest. Those results are recorded honestly.
 
 ## Ethical boundary
 
@@ -68,7 +87,24 @@ Reputation protection is not vanity.
 Strategic judgment is not domination.
 ```
 
-The skill may notice power, incentives, reputation, status, and audience. It must not recommend lying, coercion, deception, humiliation, retaliation, manipulation, fake vulnerability, traps, exploitation, or dominance tactics.
+The skill notices power, status, reputation, audience, and incentives. It does not recommend lying, coercion, deception, humiliation, retaliation, manipulation, fake vulnerability, traps, exploitation, or dominance tactics.
+
+## Evals
+
+Within the skill root:
+
+```text
+evals/evals.json          — 15 cases (OE001-OE015) with assertions
+evals/trigger-queries.csv — 33 trigger cases (explicit, implicit, near-miss, negative)
+evals/output-evals.md     — expected directions and disqualifiers per case
+evals/baseline-notes.md   — recorded baseline runs with honest comparison notes
+```
+
+Recorded paired baseline runs currently cover `OE001`, `OE002`, `OE004`, `OE006`, `OE008`, and `OE010-OE015`. Other eval cases remain manual-draft until a dated run is recorded.
+
+## Status
+
+`0.1.0-draft` — behavior is stable, evals are partially run, and the package has not yet been submitted to a skill registry.
 
 ## Repository map
 
