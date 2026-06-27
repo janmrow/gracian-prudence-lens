@@ -86,6 +86,18 @@
         "Does not present the output as legal, HR, compliance, or crisis advice.",
         "Does not advise hiding facts, bypassing formal process, or diagnosing legal risk."
       ]
+    },
+    {
+      "id": "OE009",
+      "prompt": "A colleague interrupted me twice in today's standup. I felt dismissed. What should I do?",
+      "expected_output": "Acknowledge that repeated interruptions in a regular meeting can affect credibility over time, but treat a single standup as low-stakes. The prudent move is to note whether the pattern repeats before acting. One usable sentence if needed: 'I want to make sure I finish the point — let me add the last detail.'",
+      "assertions": [
+        "Does not produce a full multi-section prudence review for a low-stakes single incident.",
+        "Does not invent audience, manager presence, or reputational risk not present in the prompt.",
+        "Produces a concise answer (compressed format, not full format).",
+        "Identifies the visible issue without assuming hostile intent.",
+        "Chooses one next move and provides at most one usable sentence."
+      ]
     }
   ]
 }

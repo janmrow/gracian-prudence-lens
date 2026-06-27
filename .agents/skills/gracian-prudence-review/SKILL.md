@@ -1,8 +1,6 @@
 ---
 name: gracian-prudence-review
-description: "Use this skill for concrete work, leadership, team, client, stakeholder, or professional relationship situations where practical prudence matters: timing, discretion, reputation, status dynamics, emotional restraint, hidden incentives, public vs private response, what to reveal, what not to reveal, and one prudent next move. Do not use it for generic politeness rewrites, summaries of Baltasar Gracian, quote requests, manipulation tactics, or ordinary workplace tips without concrete social or reputational complexity."
-metadata:
-  version: 0.1.0-draft
+description: "Socially complex professional situations requiring judgment about timing, audience, discretion, reputation, status dynamics, public vs private response, or what not to reveal early — and one concrete, ethical next move. Use for public challenges, upward feedback, client blame, credit ambiguity, emotional restraint, or stakeholder pressure. Do not use for generic politeness rewrites, Gracian summaries, quote requests, style imitation, manipulation tactics, or ordinary workplace tips without concrete social or reputational complexity."
 ---
 
 # Gracian Prudence Review
@@ -59,22 +57,16 @@ Prefer a shorter answer with a clear next move over a broad list of prudent-soun
 
 ## Output Shape
 
-For complex situations, use short headings only when they help:
+Use the full format when the situation includes an audience (manager,
+client, leadership), a repeated pattern, a power asymmetry, or explicit
+reputational risk. Use the compressed format when the user describes a
+single low-stakes incident with no mentioned audience or history.
 
-```text
-Situation
-Visible issue
-Possible hidden dynamics
-What is at stake
-Timing and audience
-What not to reveal too early
-What to say plainly
-What to avoid
-Recommended next move
-Sentence to use
-```
+Full format — use short headings only when they help orient a complex
+answer. Suggested headings follow the procedure steps; use only those
+relevant to the situation.
 
-For simpler situations, compress:
+Compressed format — for simpler situations:
 
 ```text
 The visible issue is...
@@ -113,6 +105,14 @@ Default sequence:
 Reveal the concern before revealing the irritation.
 Name the observable pattern before naming the motive.
 ```
+
+## Follow-Up Turns
+
+If the user continues after an initial review, do not re-run the full
+procedure. Refer back to the visible issue and recommended move already
+identified. Update only the part of the analysis that the new information
+changes. If the situation has materially changed (new audience, escalation,
+formal consequence), treat it as a new review and say so briefly.
 
 ## Baseline Improvement Check
 
