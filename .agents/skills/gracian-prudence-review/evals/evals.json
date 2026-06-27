@@ -98,6 +98,78 @@
         "Identifies the visible issue without assuming hostile intent.",
         "Chooses one next move and provides at most one usable sentence."
       ]
+    },
+    {
+      "id": "OE010",
+      "prompt": "A coworker presented part of my work as if it was theirs during a leadership update. I need to correct the record without looking petty.",
+      "expected_output": "Restore the record calmly through contribution language, not accusation. Focus on the work, not the person's intent. Time the correction for when it adds context rather than contradiction.",
+      "assertions": [
+        "Does not assume deliberate theft without evidence.",
+        "Recommends correcting the record publicly through contribution language, not accusation.",
+        "Identifies the leadership audience as relevant to timing and framing.",
+        "Warns against staying silent (invisible cost) and against public accusation (credibility cost).",
+        "Provides one usable sentence the user could say or send."
+      ]
+    },
+    {
+      "id": "OE011",
+      "prompt": "A senior person said something inaccurate in a meeting. I need to correct it without making them defensive.",
+      "expected_output": "Correct the fact, not the person. Frame the correction as adding information, not contradicting authority. Do not wait until after the meeting if the inaccuracy affects a live decision.",
+      "assertions": [
+        "Identifies the power asymmetry as the key constraint on delivery, not on whether to correct.",
+        "Recommends correcting the fact publicly if the decision depends on it.",
+        "Frames the correction as additive, not contradictory.",
+        "Does not advise silence or waiting when the inaccuracy is decision-relevant.",
+        "Provides one usable sentence for the in-meeting correction."
+      ]
+    },
+    {
+      "id": "OE012",
+      "prompt": "My client keeps adding small tasks outside scope. I want to push back without damaging the relationship.",
+      "expected_output": "Name the pattern as a scope question, not a personal boundary. Separate the relationship from the contract. Respond to the next out-of-scope request by making the trade-off visible rather than refusing.",
+      "assertions": [
+        "Does not treat scope pushback as confrontation or relationship risk.",
+        "Recommends making the trade-off visible rather than a flat refusal.",
+        "Warns against silent compliance (which sets a precedent) and against blunt refusal (which damages trust).",
+        "Identifies the right moment to raise the scope conversation — not mid-task.",
+        "Provides one usable sentence or framing for the next out-of-scope request."
+      ]
+    },
+    {
+      "id": "OE013",
+      "prompt": "A stakeholder bypasses me and goes directly to my junior teammate with requests. I need to handle it without looking territorial.",
+      "expected_output": "Clarify the channel through the work, not through a territorial claim. Address the next instance by looping yourself in without making the stakeholder wrong. If the pattern continues, name it as a coordination issue.",
+      "assertions": [
+        "Does not treat the bypass as a deliberate slight without evidence.",
+        "Recommends a channel correction framed as coordination, not ownership.",
+        "Warns against public correction of the stakeholder and against saying nothing (which continues the pattern).",
+        "Identifies the junior teammate's position as a consideration — do not put them in the middle.",
+        "Provides one usable framing for the next occurrence."
+      ]
+    },
+    {
+      "id": "OE014",
+      "prompt": "I am angry and want to send a sharp reply now, but I suspect waiting may be wiser.",
+      "expected_output": "Wait. Draft the reply but do not send it. Separate what is factually true from what is emotionally charged. Send only when the factual part is clean and the emotional charge has dropped.",
+      "assertions": [
+        "Advises waiting without advising permanent silence.",
+        "Distinguishes between the factual content (which may still need to be sent) and the emotional charge (which should not be sent).",
+        "Does not moralize about the anger — treats it as information about timing.",
+        "Provides a concrete action for the waiting period (draft but do not send).",
+        "Identifies the risk of sending now: the reply may be technically right but land as an attack."
+      ]
+    },
+    {
+      "id": "OE015",
+      "prompt": "My manager repeatedly gives credit to another team for work my team did. I do not want to seem needy, but visibility is being affected.",
+      "expected_output": "Make the work visible through documentation and contribution language before the next credit opportunity arises. Address the pattern with the manager privately and specifically, not as a complaint about fairness.",
+      "assertions": [
+        "Identifies that a repeated pattern warrants direct action, unlike a one-time omission.",
+        "Recommends proactive visibility (documentation, contribution language) not just reactive correction.",
+        "Advises a private conversation with the manager framed around work impact, not fairness or feelings.",
+        "Warns against public correction of the manager and against continued silence on a repeated pattern.",
+        "Provides one usable framing for the private conversation."
+      ]
     }
   ]
 }
