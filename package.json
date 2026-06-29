@@ -2,6 +2,7 @@
   "name": "gracian-prudence-lens",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "format:check": "prettier --check \"**/*.{md,yml,yaml,json}\"",
