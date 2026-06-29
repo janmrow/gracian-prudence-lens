@@ -162,7 +162,7 @@ function checkRepositoryContamination(files) {
     /\bsecret\b/i,
     /\bpassword\b/i,
     /C:\\Users/i,
-    /\/home\/(?!janek\/projects\/gracian-prudence-lens\b)/,
+    /\/home\//,
     /\/mnt\//,
   ];
 
