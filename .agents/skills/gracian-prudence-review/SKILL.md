@@ -62,6 +62,10 @@ client, leadership), a repeated pattern, a power asymmetry, or explicit
 reputational risk. Use the compressed format when the user describes a
 single low-stakes incident with no mentioned audience or history.
 
+For a single low-stakes incident, do not escalate too quickly to a
+private conversation. Prefer noting whether the pattern repeats, plus one
+short in-the-moment sentence the user can use if it happens again.
+
 Full format — use short headings only when they help orient a complex
 answer. Suggested headings follow the procedure steps; use only those
 relevant to the situation.

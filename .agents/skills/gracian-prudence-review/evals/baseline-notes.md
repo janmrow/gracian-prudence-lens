@@ -25,10 +25,12 @@ For each comparison:
 
 Use a fresh context where the skill is unavailable or explicitly disabled. If the evaluator has already read `SKILL.md`, do not use that evaluator to invent baseline output. Record the run as blocked or not run.
 
+In `trigger-queries.csv`, `date_run` means that exact trigger row was exercised and recorded. Do not fill it only because the same output eval has some other baseline note.
+
 ## Current Status
 
 ```text
-Baseline comparison run recorded on 2026-06-26 for B001-B005.
+Baseline comparison runs recorded for B001-B011 with gpt-5.5 through Codex CLI, and B012-B015 with Claude Code Sonnet.
 ```
 
 ## Baseline Run 2026-06-26
@@ -165,6 +167,54 @@ Comparison: skill improved focus and motive restraint, but baseline was more com
 
 Across B006-B011, the baseline model was stronger than expected and often gave usable, non-cynical workplace advice. The skill added the most value when it made the hidden-risk frame, sequencing, motive restraint, or "what not to reveal" clearer. The smallest recommended next change is to sharpen `SKILL.md` on factual-record moments: when public attribution or decision accuracy is affected, the answer should recommend a calm public correction of the record without turning the personal pattern into a public accusation.
 
+## Claude Baseline Run 2026-06-29
+
+Method: paired baseline and with-skill runs used Claude Code 2.1.195 with `claude -p --model sonnet --permission-mode plan --no-session-persistence`. Baseline runs were executed from `/tmp` with no repository context. With-skill runs were executed from this repository and explicitly told Claude to use only `.agents/skills/gracian-prudence-review/SKILL.md` as project-specific guidance. Full outputs were saved temporarily as `/tmp/gpl-claude-baseline-OE*.md` and `/tmp/gpl-claude-skill-OE*.md`; the durable record below summarizes the comparison.
+
+### B012 -> OE003 / T003
+
+Prompt: manager asks for honest feedback after becoming defensive last time.
+
+Baseline summary: strong answer. It named the tension between honesty and effectiveness, advised one or two focused points, suggested curiosity and impact framing, and warned that the manager may want the appearance of feedback more than feedback itself.
+
+With-skill summary: more explicit about the user's actual decision, the visible issue, possible hidden dynamics, what not to reveal too early, and the wrong moves on both sides. It recommended one concrete, work-focused point and testing receptivity before going deeper.
+
+Comparison: skill improved structure, motive restraint, and decision clarity. Baseline was already good, but the skill better matched OE003 by making calibration and power-aware scope the central move.
+
+### B013 -> OE005 / T016
+
+Prompt: help me reply to my manager.
+
+Baseline summary: correctly refused to guess and asked for the manager's message, the user's intended reply, and desired tone.
+
+With-skill summary: asked one concise clarifying question covering stakes, who is involved, and whether the situation is public, private, repeated, or one-time.
+
+Comparison: skill improved the answer by asking one targeted context question instead of several generic rewrite questions. This matches the thin-prompt behavior expected by OE005.
+
+### B014 -> OE007 / T023
+
+Prompt: summarize The Art of Worldly Wisdom by Baltasar Gracian.
+
+Baseline summary: answered as a literary summary, covering themes such as self-mastery, timing, reputation, strategic concealment, reading people, and adaptability. It included some wording that leaned toward cynical social strategy.
+
+With-skill summary: also answered as a normal literary summary and did not force the professional prudence review format. It framed the book as practical guidance for social and professional life and added a short limits section.
+
+Comparison: both runs passed the negative-trigger boundary by not applying the skill format. The with-skill answer was slightly more aligned with the non-cynicism boundary, but the important result is that the skill did not over-trigger.
+
+### B015 -> OE009 / T033
+
+Prompt: colleague interrupted the user twice in today's standup; the user felt dismissed.
+
+Baseline summary: practical but broad. It offered several options, including direct conversation, addressing the next interruption in the moment, and involving a manager if it becomes a pattern. It chose direct conversation as the likely first move.
+
+With-skill summary: used a compressed shape and avoided hostile intent, but recommended a brief private word the same day. That was more forceful than OE009 expects for a single low-stakes incident.
+
+Comparison: partial improvement only. The skill improved compression and motive restraint, but failed the expected next-move calibration. This run justified sharpening `SKILL.md` so a single low-stakes incident defaults to observing whether the pattern repeats and preparing one in-the-moment sentence, not initiating private follow-up immediately.
+
+### Claude Run Outcome
+
+Claude Code Sonnet baseline was already strong on OE003 and adequate on OE005, OE007, and OE009. The skill added the clearest value on thin-prompt handling and upward-feedback calibration. The main failure was OE009: compressed format worked, but low-stakes escalation was too fast. `SKILL.md` was sharpened on that point after this run.
+
 ## Baseline Run Queue
 
 Run these first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
@@ -208,6 +258,7 @@ Baseline ID:
 Prompt:
 Date:
 Baseline model / system:
+With-skill model:
 Skill version:
 Was skill used: No
 Baseline output summary:
