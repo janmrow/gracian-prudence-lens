@@ -66,7 +66,7 @@ Concretely, a good answer identifies the user's actual decision, separates the v
 
 ## Baseline evidence
 
-The skill has recorded paired baseline and with-skill comparisons for B001-B011 using unguided `gpt-5.5` responses as the baseline. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
+The skill has recorded paired baseline and with-skill comparisons for B001-B011 using unguided `gpt-5.5` responses as the baseline, plus selected Claude Code Sonnet comparisons for B012-B015. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
 
 Where the skill added the most value:
 
@@ -100,7 +100,7 @@ evals/output-evals.md     — expected directions and disqualifiers per case
 evals/baseline-notes.md   — recorded baseline runs with honest comparison notes
 ```
 
-Recorded paired baseline runs currently cover `OE001`, `OE002`, `OE004`, `OE006`, `OE008`, and `OE010-OE015`. Other eval cases remain manual-draft until a dated run is recorded.
+Recorded paired baseline runs currently cover `OE001-OE015`, with `OE003`, `OE005`, `OE007`, and `OE009` covered by selected Claude Code Sonnet runs. Trigger coverage is still partial; see `trigger-queries.csv` for dated trigger rows.
 
 ## Status
 
