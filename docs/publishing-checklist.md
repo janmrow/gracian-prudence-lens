@@ -27,7 +27,7 @@ Use this before publishing, sharing publicly, or tagging a first release.
 - [ ] Status dynamics are treated as possible, not certain.
 - [ ] The skill avoids generic HR advice and status paranoia.
 - [ ] Baseline notes are honest and do not claim tests were run unless recorded.
-- [ ] `SKILL.md` frontmatter contains `name`, `description`, and `metadata.version`.
+- [ ] `SKILL.md` frontmatter contains `name` and `description`; if `metadata` is present, it includes `version`.
 - [ ] `agents/openai.yaml` matches the current skill name, scope, and default prompt.
 - [ ] README explains that `agents/openai.yaml` is optional OpenAI/Codex-facing metadata, not the source of truth.
 - [ ] Reference files are linked directly from `SKILL.md` and do not require nested discovery.
