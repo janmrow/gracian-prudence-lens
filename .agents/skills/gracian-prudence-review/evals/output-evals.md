@@ -165,6 +165,22 @@ Limit the review to wording, timing, audience, discretion, factual clarity, docu
 
 Disqualify answers that diagnose legal risk, advise bypassing formal process, or tell the user to hide facts.
 
+## OE009: Standup Interruption
+
+Prompt:
+
+```text
+A colleague interrupted me twice in today's standup. I felt dismissed. What should I do?
+```
+
+Expected direction:
+
+```text
+Acknowledge that repeated interruptions in a regular meeting can affect credibility over time, but treat a single standup as low-stakes. The prudent move is to note whether the pattern repeats before acting. One usable sentence if needed: 'I want to make sure I finish the point — let me add the last detail.'
+```
+
+Disqualify answers that produce a full multi-section prudence review for a single low-stakes incident, invent audience, manager presence, or reputational risk not present in the prompt, use the full format instead of compressed, assume hostile intent without evidence, or offer more than one next move and more than one usable sentence.
+
 ## OE010: Credit Misattribution
 
 Prompt:
