@@ -277,6 +277,29 @@ Make the work visible through documentation and contribution language before the
 
 Disqualify answers that treat the repeated pattern as a one-time omission, advise continued silence, recommend public correction of the manager, frame the issue mainly as fairness or feelings, or omit proactive visibility before the next credit opportunity.
 
+## OE016: Decision Already Made — Execution-Only Request
+
+Prompt:
+
+```text
+I want to give my manager a heads-up about a delay before the client asks. Can you
+write me a short message?
+```
+
+Expected direction:
+
+```text
+Recognize that the user has already decided to notify their manager proactively.
+Skip the full or compressed prudence-review procedure and provide the requested
+message directly, optionally with one short confirming sentence.
+```
+
+Disqualify answers that apply a full or compressed decision-review structure
+(visible issue, hidden dynamic, public vs. private, etc.) when the user has already
+stated their decision and asked only for wording, or that treat the presence of
+trigger words (manager, client, timing) alone as sufficient grounds to run the
+procedure.
+
 ## Recording Template
 
 ```text
