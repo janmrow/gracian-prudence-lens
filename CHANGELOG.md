@@ -14,3 +14,6 @@ All notable changes to `gracian-prudence-review` should be recorded here.
 - Recorded the OE016/T034 baseline-vs-with-skill comparison, refreshed README
   and agent docs eval counts, and added a value map plus manual scoring standard
   for future baseline notes.
+- Clarified release evidence wording so README, baseline notes, and trigger
+  query coverage distinguish recorded paired baselines from trigger rows that
+  were only exercised.

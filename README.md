@@ -66,7 +66,7 @@ Concretely, a good answer identifies the user's actual decision, separates the v
 
 ## Baseline evidence
 
-The skill has recorded paired baseline and with-skill comparisons for B001-B011 and B016 using unguided `gpt-5.5` responses as the baseline, plus selected Claude Code Sonnet comparisons for B012-B015. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
+The skill has recorded paired baseline and with-skill comparisons for all structured output evals `OE001`-`OE016`. Most comparisons use unguided `gpt-5.5` responses as the baseline; `OE003`, `OE005`, `OE007`, and `OE009` use selected Claude Code Sonnet comparisons. This is evidence for the listed cases, not a full cross-model validation matrix. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
 
 Where the skill added the most value:
 
@@ -95,12 +95,12 @@ Within the skill root:
 
 ```text
 evals/evals.json          — 16 cases (OE001-OE016) with assertions
-evals/trigger-queries.csv — 34 trigger cases (explicit, implicit, near-miss, negative)
+evals/trigger-queries.csv — 34 trigger rows with per-row coverage status
 evals/output-evals.md     — expected directions and disqualifiers per case
 evals/baseline-notes.md   — recorded baseline runs with honest comparison notes
 ```
 
-Recorded paired baseline runs currently cover `OE001-OE016`, with `OE003`, `OE005`, `OE007`, and `OE009` covered by selected Claude Code Sonnet runs. Trigger coverage is still partial; see `trigger-queries.csv` for dated trigger rows.
+Recorded paired baseline runs currently cover `OE001`-`OE016`. Trigger coverage is still partial: in `trigger-queries.csv`, `date_run` means that exact trigger row was exercised, while `coverage_status` distinguishes rows with a recorded paired baseline from rows that were only exercised for trigger behavior.
 
 ## Status
 
