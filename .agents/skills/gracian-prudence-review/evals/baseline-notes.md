@@ -44,7 +44,7 @@ non-cynical workplace advice.
 | Clear win                 | B002, B004, B005, B013                   | Better factual-record protection, practical refusal of manipulation, narrower formal-consequence handling, and one targeted clarifying question instead of scattered rewrite questions.                   |
 | Modest improvement        | B001, B007, B009, B010, B011, B012, B016 | Better compression, decision framing, motive restraint, timing, public/private sequencing, or execution-only gating, while the baseline was already useful.                                               |
 | Close to tie              | B003, B008, B014                         | Correct non-triggering or ordinary-answer behavior; the useful result is avoiding overreach rather than outperforming baseline.                                                                           |
-| Calibration failure fixed | B006, B015                               | B006 exposed the need for public factual-record correction when leadership attribution matters. B015 exposed over-escalation on a single low-stakes interruption; `SKILL.md` was sharpened after the run. |
+| Calibration gaps captured | B006, B015                               | B006 exposed the need for public factual-record correction when leadership attribution matters. B015 exposed over-escalation on a single low-stakes interruption; `SKILL.md` was sharpened after the run. |
 
 ## Baseline Run 2026-06-26
 
@@ -236,7 +236,8 @@ Method:
 2. With-skill response was generated with `codex exec` from this repository, also with `--ignore-user-config`, `--ignore-rules`, `--ephemeral`, and `--sandbox read-only`.
 3. With-skill prompt explicitly told the model to read and use only `.agents/skills/gracian-prudence-review/SKILL.md` as project-specific guidance.
 4. Both runs used `gpt-5.5` through Codex CLI.
-5. Full outputs were saved temporarily as `/tmp/gpl-baseline-OE016.md` and `/tmp/gpl-skill-OE016.md`; the durable record below summarizes the comparison.
+5. The baseline run still read inherited Codex home `AGENTS.md` defaults during execution, but it had no repository or skill context.
+6. Full outputs were saved temporarily as `/tmp/gpl-baseline-OE016.md` and `/tmp/gpl-skill-OE016.md`; the durable record below summarizes the comparison.
 
 ### B016 -> OE016 / T034
 
