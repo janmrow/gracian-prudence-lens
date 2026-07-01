@@ -20,6 +20,15 @@ Reach for `gracian-prudence-review` when a user describes a situation like:
 
 In each case the right move is not obvious, and the wrong move has a real cost. The skill's job is to make the decision clearer, not to moralize, list options, or assume bad intent.
 
+| Situation            | What the skill helps with                                                       |
+| -------------------- | ------------------------------------------------------------------------------- |
+| Public challenge     | Protect the work point in the room, then handle any repeated pattern privately. |
+| Client blame         | Acknowledge impact without accepting cause or fault before the facts are clear. |
+| Upward feedback      | Share one concrete work-focused point without unloading the full backlog.       |
+| Credit ambiguity     | Restore the factual record without starting with accusation or motive.          |
+| Angry draft          | Slow the timing, remove the sharp edge, and keep the useful concern.            |
+| Manipulation request | Refuse the tactic and redirect toward an ethical, reputation-safe move.         |
+
 ## Install
 
 The skill root is:
@@ -37,6 +46,12 @@ For Codex-style repo loading, keep the skill at:
 ```
 
 The file `.agents/skills/gracian-prudence-review/agents/openai.yaml` is optional Codex app metadata. `SKILL.md` is the source of truth for behavior.
+
+| Use path                       | Status                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------ |
+| Codex-style repo skill loading | Supported by keeping the skill at `.agents/skills/gracian-prudence-review/SKILL.md`. |
+| Manual `SKILL.md` copy         | Supported when your agent client accepts Markdown skill instructions.                |
+| Other agent clients            | Adaptable manually; not claimed as fully tested cross-client validation.             |
 
 ## Invoke
 
