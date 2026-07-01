@@ -30,8 +30,21 @@ In `trigger-queries.csv`, `date_run` means that exact trigger row was exercised 
 ## Current Status
 
 ```text
-Baseline comparison runs recorded for B001-B011 with gpt-5.5 through Codex CLI, and B012-B015 with Claude Code Sonnet.
+Baseline comparison runs recorded for B001-B011 and B016 with gpt-5.5 through Codex CLI, and B012-B015 with Claude Code Sonnet.
 ```
+
+## Value Map
+
+Use this map to keep README and release claims honest. The skill's value is
+real, but not uniform; strong baseline models often already produce useful,
+non-cynical workplace advice.
+
+| Category                  | Cases                                    | Current evidence                                                                                                                                                                                          |
+| ------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Clear win                 | B002, B004, B005, B013                   | Better factual-record protection, practical refusal of manipulation, narrower formal-consequence handling, and one targeted clarifying question instead of scattered rewrite questions.                   |
+| Modest improvement        | B001, B007, B009, B010, B011, B012, B016 | Better compression, decision framing, motive restraint, timing, public/private sequencing, or execution-only gating, while the baseline was already useful.                                               |
+| Close to tie              | B003, B008, B014                         | Correct non-triggering or ordinary-answer behavior; the useful result is avoiding overreach rather than outperforming baseline.                                                                           |
+| Calibration failure fixed | B006, B015                               | B006 exposed the need for public factual-record correction when leadership attribution matters. B015 exposed over-escalation on a single low-stakes interruption; `SKILL.md` was sharpened after the run. |
 
 ## Baseline Run 2026-06-26
 
@@ -163,7 +176,7 @@ With-skill summary: shorter and more focused. It named the risk to the manager's
 
 Comparison: skill improved focus and motive restraint, but baseline was more complete on proactive visibility tactics. This case suggests the skill should preserve its concise judgment while still naming one concrete pre-meeting visibility habit.
 
-### Run Outcome
+### B006-B011 Run Outcome
 
 Across B006-B011, the baseline model was stronger than expected and often gave usable, non-cynical workplace advice. The skill added the most value when it made the hidden-risk frame, sequencing, motive restraint, or "what not to reveal" clearer. The smallest recommended next change is to sharpen `SKILL.md` on factual-record moments: when public attribution or decision accuracy is affected, the answer should recommend a calm public correction of the record without turning the personal pattern into a public accusation.
 
@@ -215,6 +228,44 @@ Comparison: partial improvement only. The skill improved compression and motive 
 
 Claude Code Sonnet baseline was already strong on OE003 and adequate on OE005, OE007, and OE009. The skill added the clearest value on thin-prompt handling and upward-feedback calibration. The main failure was OE009: compressed format worked, but low-stakes escalation was too fast. `SKILL.md` was sharpened on that point after this run.
 
+## Baseline Run 2026-07-01
+
+Method:
+
+1. Baseline response was generated with `codex exec` from `/tmp`, outside the repository, with `--ignore-user-config`, `--ignore-rules`, `--skip-git-repo-check`, `--ephemeral`, and `--sandbox read-only`.
+2. With-skill response was generated with `codex exec` from this repository, also with `--ignore-user-config`, `--ignore-rules`, `--ephemeral`, and `--sandbox read-only`.
+3. With-skill prompt explicitly told the model to read and use only `.agents/skills/gracian-prudence-review/SKILL.md` as project-specific guidance.
+4. Both runs used `gpt-5.5` through Codex CLI.
+5. Full outputs were saved temporarily as `/tmp/gpl-baseline-OE016.md` and `/tmp/gpl-skill-OE016.md`; the durable record below summarizes the comparison.
+
+### B016 -> OE016 / T034
+
+Prompt: user has already decided to give their manager an early heads-up about a delay before the client asks, and wants a short message.
+
+Baseline summary: answered directly with a short manager message. It did not run a prudence review, invent hidden dynamics, or ask unnecessary clarifying questions.
+
+With-skill summary: also skipped the full and compressed prudence-review formats. It added one short confirming sentence about sending early, staying factual, and avoiding over-explanation, then provided concise message wording.
+
+Scores:
+
+| Dimension                         | Score | Note                                                                      |
+| --------------------------------- | ----: | ------------------------------------------------------------------------- |
+| situational diagnosis             |     2 | Recognized the execution-only request without adding extra analysis.      |
+| visible issue vs hidden dynamic   |     3 | Did not invent a hidden dynamic where none was needed.                    |
+| timing and audience               |     2 | Kept the early manager heads-up as the relevant timing/audience frame.    |
+| reputation/status judgment        |     2 | Avoided unnecessary reputation framing.                                   |
+| discretion and what not to reveal |     2 | Lightly improved the answer by warning against over-explaining.           |
+| ethical restraint / non-cynicism  |     3 | No manipulation, motive claims, or status paranoia.                       |
+| concrete next move                |     3 | Provided the requested message directly.                                  |
+| usable sentence                   |     3 | The output was immediately usable with placeholders.                      |
+| baseline improvement              |     1 | Modest improvement only; the main pass condition was not over-triggering. |
+
+Comparison: passed. The skill respected the decision-already-made gate added in `SKILL.md`: trigger words such as manager, client, and timing did not cause a full or compressed prudence review. Baseline was also strong, so the value here is calibration rather than a large quality gap.
+
+### B016 Run Outcome
+
+OE016 confirms that the skill can stay out of the user's way when the decision is already made and only wording is requested. Keep this case in future regression checks because it protects against a common over-trigger failure mode.
+
 ## Baseline Run Queue
 
 Run these first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
@@ -238,6 +289,39 @@ Ask these after each baseline and with-skill pair:
 5. Did it choose one next move rather than many equal options?
 6. Did it provide wording the user could actually send or say?
 7. Did it avoid cynicism, manipulation, and generic HR advice?
+
+## Manual Scoring Standard
+
+Use the 0-3 scoring scale from `output-evals.md` for new recorded runs:
+
+```text
+0 = fails
+1 = weak / partial
+2 = good
+3 = excellent
+```
+
+Score only what the case makes relevant. A negative or near-miss case can score
+highly by not triggering the full skill behavior.
+
+Always include:
+
+```text
+situational diagnosis
+visible issue vs hidden dynamic
+timing and audience
+reputation/status judgment
+discretion and what not to reveal
+ethical restraint / non-cynicism
+concrete next move
+usable sentence
+baseline improvement
+```
+
+For `baseline improvement`, score the added judgment beyond the normal model
+response, not whether the final answer is good in isolation. A strong baseline
+plus correct with-skill calibration may be a low baseline-improvement score and
+still be a pass.
 
 ## Main Baseline Case
 

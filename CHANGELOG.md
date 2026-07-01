@@ -11,3 +11,6 @@ All notable changes to `gracian-prudence-review` should be recorded here.
   decided and is asking only for execution (wording, a message, a draft) skip
   the decision procedure entirely. Added a matching eval case (OE016) and
   trigger-query row (T034) to cover this behavior going forward.
+- Recorded the OE016/T034 baseline-vs-with-skill comparison, refreshed README
+  and agent docs eval counts, and added a value map plus manual scoring standard
+  for future baseline notes.
