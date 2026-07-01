@@ -30,8 +30,16 @@ In `trigger-queries.csv`, `date_run` means that exact trigger row was exercised 
 ## Current Status
 
 ```text
-Baseline comparison runs recorded for B001-B011 and B016 with gpt-5.5 through Codex CLI, and B012-B015 with Claude Code Sonnet.
+Paired baseline comparisons are recorded for OE001-OE016.
+
+Most runs use gpt-5.5 through Codex CLI. OE003, OE005, OE007, and OE009 use selected Claude Code Sonnet comparisons.
+
+This is case-level release evidence, not a full cross-model validation matrix.
 ```
+
+## Coverage Notes
+
+`evals/evals.json` and `output-evals.md` define the structured output cases and expected directions. `trigger-queries.csv` is broader trigger bookkeeping: `date_run` means that exact row was exercised, while `coverage_status` distinguishes rows with a recorded paired baseline from rows that were only exercised for trigger behavior.
 
 ## Value Map
 
@@ -267,9 +275,9 @@ Comparison: passed. The skill respected the decision-already-made gate added in 
 
 OE016 confirms that the skill can stay out of the user's way when the decision is already made and only wording is requested. Keep this case in future regression checks because it protects against a common over-trigger failure mode.
 
-## Baseline Run Queue
+## Initial Baseline Run Queue
 
-Run these first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
+Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
 
 ```text
 B001 -> OE001 / T001

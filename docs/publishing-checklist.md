@@ -27,12 +27,15 @@ Use this before publishing, sharing publicly, or tagging a first release.
 - [ ] Status dynamics are treated as possible, not certain.
 - [ ] The skill avoids generic HR advice and status paranoia.
 - [ ] Baseline notes are honest and do not claim tests were run unless recorded.
+- [ ] README evidence claims match `baseline-notes.md` and do not imply a full cross-model validation matrix.
+- [ ] `trigger-queries.csv` distinguishes exact trigger rows that were exercised from rows with recorded paired baseline comparisons.
 - [ ] `SKILL.md` frontmatter contains `name` and `description`; if `metadata` is present, it includes `version`.
 - [ ] `agents/openai.yaml` matches the current skill name, scope, and default prompt.
 - [ ] README explains that `agents/openai.yaml` is optional OpenAI/Codex-facing metadata, not the source of truth.
 - [ ] Reference files are linked directly from `SKILL.md` and do not require nested discovery.
 - [ ] `evals/evals.json` defines structured manual-draft test cases for future with-skill and without-skill runs.
 - [ ] Evals cover positive, near-miss, negative, and harmful-manipulation cases.
+- [ ] Evaluation findings that change behavior are reflected in `SKILL.md`, not only in notes.
 - [ ] No scripts are added unless a deterministic validation or repeatable operation clearly needs one.
 - [ ] No long Gracian passages or modern copyrighted translations are included.
 - [ ] Examples are original, fictional, generic, or sufficiently abstracted.
@@ -57,7 +60,7 @@ node -e "const fs=require('fs'); const p='.agents/skills/gracian-prudence-review
 Check for obvious private paths, secrets, or unfinished notes:
 
 ```bash
-rg -n -S -u -g '!/.git/**' -g '!docs/publishing-checklist.md' -e "TODO|FIXME|XXX|api[_-]?key|secret|token|password|/home/|/mnt/" -e 'C:\\Users' .
+rg -n -S -u -g '!/.git/**' -g '!node_modules/**' -g '!docs/publishing-checklist.md' -g '!scripts/check-skills.mjs' -e "\b(TODO|FIXME|XXX|secret|token|password)\b|api[_-]?key|/home/|/mnt/" -e 'C:\\Users' .
 ```
 
 Check that the `SKILL.md` frontmatter stays minimal:
