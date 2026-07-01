@@ -41,6 +41,22 @@ Use this before publishing, sharing publicly, or tagging a first release.
 - [ ] Examples are original, fictional, generic, or sufficiently abstracted.
 - [ ] `NOTICE.md` clearly states independence.
 
+## Release Quality Bar
+
+Before release, each meaningful change should be:
+
+- [ ] Specific: it improves a concrete skill behavior or public-use path.
+- [ ] Verifiable: it can be checked by reading the relevant file, running
+      deterministic checks, or comparing against a recorded eval note.
+- [ ] Source-aligned: behavior changes are reflected in `SKILL.md`, not only in
+      README, examples, or eval notes.
+- [ ] Ethically bounded: it strengthens prudence without teaching pressure,
+      deception, humiliation, retaliation, or manipulation.
+- [ ] Non-duplicative: supporting docs clarify the skill instead of redefining
+      or expanding the source of truth.
+- [ ] Evidence-honest: public claims match `baseline-notes.md` and do not imply
+      tests, client support, or model coverage that has not been recorded.
+
 ## Optional Local Checks
 
 These checks are cheap and deterministic. They do not run model evals.

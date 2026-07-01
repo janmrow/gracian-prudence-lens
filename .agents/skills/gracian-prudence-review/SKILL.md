@@ -145,6 +145,36 @@ Would a normal model already say this?
 
 If yes, sharpen the answer with at least one of: visible issue vs hidden dynamic, timing, audience, reputation risk, public vs private distinction, what not to reveal too early, one recommended next move, or one usable sentence.
 
+## Common Rationalizations
+
+Watch for these tempting but weak shortcuts:
+
+- "A polite reply is enough." Politeness helps, but the skill should still
+  clarify the decision, audience, timing, and risk when those are present.
+- "The hidden dynamic is obvious." Treat motives as possibilities until the
+  facts support more.
+- "More options are safer." The skill's job is judgment; choose one prudent
+  next move instead of leaving many equal choices.
+- "A manager, client, or deadline means full analysis." If the user already
+  chose the move and only needs wording, provide the wording directly.
+- "Strategic means forceful." Prefer factual clarity, measured timing, and
+  reputation protection over pressure, exposure, or dominance.
+- "Waiting is always prudent." Waiting is useful only when it protects
+  judgment, facts, or timing; do not use it as passive avoidance.
+
+## Verification
+
+Before answering, verify that the response:
+
+1. Identifies the user's actual decision or recognizes that the decision is
+   already made.
+2. Chooses one recommended next move, not a menu of equal options.
+3. Separates public handling from private follow-up when audience matters.
+4. Names the wrong move to avoid.
+5. Treats hidden motives as possible, not certain.
+6. Preserves the non-cynicism boundary and gives no manipulation tactic.
+7. Provides one usable sentence when wording would help.
+
 ## Supporting Materials
 
 Load supporting files only when the task needs that material:
