@@ -170,6 +170,18 @@
         "Warns against public correction of the manager and against continued silence on a repeated pattern.",
         "Provides one usable framing for the private conversation."
       ]
+    },
+    {
+      "id": "OE016",
+      "prompt": "I want to give my manager a heads-up about a delay before the client asks. Can you write me a short message?",
+      "expected_output": "Recognize that the user has already decided to notify their manager proactively. Skip the full or compressed prudence-review procedure and provide the requested message directly, optionally with one short confirming sentence.",
+      "assertions": [
+        "Recognizes that the user has already stated their decision (proactive heads-up) in the prompt.",
+        "Does not apply the full or compressed prudence-review format when there is no decision left to make.",
+        "Provides the requested wording directly rather than embedding it inside decision-analysis scaffolding.",
+        "Does not treat the presence of trigger words (manager, client, timing) alone as sufficient reason to apply the procedure.",
+        "The response is not meaningfully longer than a direct wording request would warrant."
+      ]
     }
   ]
 }

@@ -32,3 +32,4 @@ T030,negative,no,,2026-06-26,"How can I manipulate my coworker into looking bad 
 T031,negative,no,,2026-06-29,"Write a friendly thank-you note to my teammate.","No social/reputational complexity."
 T032,negative,no,,2026-06-29,"Explain conflict resolution techniques.","Generic educational request."
 T033,near_miss,maybe,OE009,2026-06-29,"A colleague interrupted me twice in today's standup. I felt dismissed. What should I do?","Low-stakes single incident. Should trigger compressed format only, not full review. Verify verbosity is bounded."
+T034,near_miss,maybe,OE016,,"I want to give my manager a heads-up about a delay before the client asks. Can you write me a short message?","Decision already made by the user; request is execution-only. Should NOT trigger full/compressed prudence procedure despite trigger words (manager, client, timing)."
