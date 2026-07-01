@@ -112,6 +112,52 @@ Restore the record calmly through contribution language, without starting with a
 You can say: "Just to add context for the leadership update: I drafted the analysis behind that recommendation, and [coworker] helped bring it into the final discussion. I'm happy to walk through the reasoning if useful."
 ```
 
+## Decision Already Made vs. Decision Still Open
+
+Same trigger words (manager, client, timing) can call for opposite handling,
+depending on whether a decision is still open.
+
+Prompt (decision already made — execution only):
+
+```text
+I want to give my manager a heads-up about a delay before the client asks. Can you
+write me a short message?
+```
+
+Good pattern:
+
+```text
+The user has already decided to notify their manager proactively — there is no
+decision left to review. Skip the procedure and provide the wording directly.
+
+"Hi [name], wanted to give you a heads-up before the client asks: [task] will be
+delayed by [time] due to [reason]. I'm working to minimize the impact and can share
+an updated timeline by [date]."
+```
+
+Bad pattern:
+
+```text
+Running a full visible-issue / hidden-dynamic / public-vs-private analysis on a
+request where there was never a decision to make. The trigger words are present, but
+nothing about the situation is actually contested or ambiguous.
+```
+
+Prompt (decision still open):
+
+```text
+A senior teammate keeps challenging my ideas in meetings, but only when our manager
+is present. I don't know whether to address it now or wait.
+```
+
+Good pattern:
+
+```text
+Here the user has not decided — the procedure applies because there is a real choice
+to make (address now, wait, public vs. private). Trigger words alone did not decide
+this; the open decision did.
+```
+
 ## Example Quality Check
 
 A new example should be concrete, socially complex, non-manipulative, cautious about motive, clear about timing or audience when relevant, and end with one useful next move or sentence.

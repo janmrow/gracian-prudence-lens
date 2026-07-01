@@ -33,6 +33,14 @@ If the user asks for manipulation, deception, humiliation, coercion, retaliation
 
 ## Procedure
 
+Before starting the procedure, check whether the user has already stated their
+decision in the prompt and is asking only for execution — wording, a message, or
+a draft. If so, do not run the procedure. Respond directly with the requested
+wording, optionally preceded by one short sentence confirming the approach is
+sound. The presence of trigger words alone (for example, manager, client,
+deadline) is not sufficient reason to run the procedure if there is no decision
+left to make.
+
 Use this as reasoning scaffolding, not mandatory headings.
 
 Always cover the user's decision, the public/private handling, the wrong move to avoid, and one recommended next move. Include hidden dynamics, power, exposure, and what not to reveal only when the situation gives enough concrete context.
@@ -57,6 +65,11 @@ Prefer a shorter answer with a clear next move over a broad list of prudent-soun
 
 ## Output Shape
 
+If the user has already decided and is asking only for execution, use neither
+the full nor the compressed format below — respond directly with the requested
+wording, optionally preceded by one short confirming sentence. See the check at
+the start of Procedure.
+
 Use the full format when the situation includes an audience (manager,
 client, leadership), a repeated pattern, a power asymmetry, or explicit
 reputational risk. Use the compressed format when the user describes a
@@ -79,6 +92,10 @@ Do not...
 The prudent next move is...
 You can say...
 ```
+
+If a concrete detail is missing that would change the assessment — for example,
+the exact wording of a comment or message being judged — ask for it before
+answering, rather than filling the compressed format with generic advice.
 
 ## Non-Cynicism Boundary
 
