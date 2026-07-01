@@ -43,13 +43,7 @@ Use this before publishing, sharing publicly, or tagging a first release.
 
 ## Optional Local Checks
 
-These checks are cheap and deterministic. They do not run model evals and do not replace a real `skills-ref` validation pass.
-
-Validate the skill with `skills-ref` if the reference tool is installed:
-
-```bash
-skills-ref validate .agents/skills/gracian-prudence-review
-```
+These checks are cheap and deterministic. They do not run model evals.
 
 Check that `evals/evals.json` parses and has the expected skill name:
 
