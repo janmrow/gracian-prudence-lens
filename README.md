@@ -149,3 +149,9 @@ NOTICE.md
   evals/output-evals.md
   evals/baseline-notes.md
 ```
+
+## Project status
+
+As of 2026-07-02, this project is feature-frozen and not under active
+development. It remains available for use and adaptation as-is. Issues and
+PRs may not receive timely responses.
