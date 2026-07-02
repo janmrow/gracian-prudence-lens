@@ -125,7 +125,9 @@ not a gap awaiting completion.
 
 ## Status
 
-`0.1.0-draft` — behavior is stable, evals are partially run, and the package has not yet been submitted to a skill registry.
+`0.1.0` — behavior is stable, OE001-OE016 have recorded paired baseline
+comparisons, and trigger coverage is documented as a deliberate boundary
+(see Evals). The package is not currently submitted to a skill registry.
 
 ## Repository map
 
