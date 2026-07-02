@@ -1,7 +1,7 @@
 {
   "skill_name": "gracian-prudence-review",
-  "status": "manual-draft",
-  "notes": "These cases define expected behavior for future with-skill and without-skill eval runs. No eval run is recorded here.",
+  "status": "baseline-compared",
+  "notes": "Expected-behavior cases for OE001-OE016. Paired baseline-vs-with-skill comparisons are recorded in evals/baseline-notes.md.",
   "evals": [
     {
       "id": "OE001",

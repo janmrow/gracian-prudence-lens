@@ -190,7 +190,7 @@ Across B006-B011, the baseline model was stronger than expected and often gave u
 
 ## Claude Baseline Run 2026-06-29
 
-Method: paired baseline and with-skill runs used Claude Code 2.1.195 with `claude -p --model sonnet --permission-mode plan --no-session-persistence`. Baseline runs were executed from `/tmp` with no repository context. With-skill runs were executed from this repository and explicitly told Claude to use only `.agents/skills/gracian-prudence-review/SKILL.md` as project-specific guidance. Full outputs were saved temporarily as `/tmp/gpl-claude-baseline-OE*.md` and `/tmp/gpl-claude-skill-OE*.md`; the durable record below summarizes the comparison.
+Method: paired baseline and with-skill runs used Claude Code 2.1.195 with `claude -p --model sonnet --permission-mode plan --no-session-persistence`. Baseline runs were executed from `/tmp` with no repository context. With-skill runs were executed from this repository and explicitly told Claude to use only `.agents/skills/gracian-prudence-review/SKILL.md` as project-specific guidance. Full outputs were saved temporarily as `/tmp/gpl-claude-baseline-OE*.md` and `/tmp/gpl-claude-skill-OE*.md`; the durable record below summarizes the comparison. Note added retroactively: unlike the Codex runs, this run did not use a flag equivalent to `--ignore-user-config`. If a user-level `~/.claude/CLAUDE.md` was present at run time, the OE003/OE005/OE007/OE009 baselines may have been influenced by inherited configuration. Treat this run as indicative, not as a controlled baseline.
 
 ### B012 -> OE003 / T003
 
