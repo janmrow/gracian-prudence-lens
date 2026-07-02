@@ -117,6 +117,12 @@ evals/baseline-notes.md   — recorded baseline runs with honest comparison note
 
 Recorded paired baseline runs currently cover `OE001`-`OE016`. Trigger coverage is still partial: in `trigger-queries.csv`, `date_run` means that exact trigger row was exercised, while `coverage_status` distinguishes rows with a recorded paired baseline from rows that were only exercised for trigger behavior.
 
+19 trigger rows are intentionally left as `trigger_exercised_only`: they
+exercise trigger, near-miss, and negative behavior without a paired
+baseline comparison. The 16 structured OE cases (OE001-OE016) carry full
+paired baselines. This is a deliberate coverage boundary for this release,
+not a gap awaiting completion.
+
 ## Status
 
 `0.1.0-draft` — behavior is stable, evals are partially run, and the package has not yet been submitted to a skill registry.
