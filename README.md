@@ -138,9 +138,6 @@ AGENTS.md
 LICENSE
 NOTICE.md
 
-docs/
-  publishing-checklist.md
-
 .agents/skills/gracian-prudence-review/
   SKILL.md
   agents/openai.yaml
