@@ -2,6 +2,12 @@
 
 All notable changes to `gracian-prudence-review` should be recorded here.
 
+## Unreleased
+
+- Run CI for every pull request and add deterministic cross-file consistency
+  checks for structured evals, trigger coverage, baseline records, and documented
+  counts.
+
 ## 0.1.0
 
 - Drafted the initial non-cynical prudence review skill.

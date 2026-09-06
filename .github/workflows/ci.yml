@@ -4,17 +4,6 @@ on:
   push:
     branches: [main]
   pull_request:
-    paths:
-      - ".agents/skills/**"
-      - ".github/workflows/**"
-      - "AGENTS.md"
-      - "CLAUDE.md"
-      - "README.md"
-      - "docs/**"
-      - "scripts/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".pre-commit-config.yaml"
 
 permissions:
   contents: read

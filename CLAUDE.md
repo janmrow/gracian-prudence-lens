@@ -45,6 +45,11 @@ The script checks:
 
 - `SKILL.md` frontmatter has `name`, `description` (≥80 chars), and `version` when `metadata` is present.
 - `evals/evals.json` parses, has the correct `skill_name`, and contains at least one case.
+- Structured eval IDs and required fields are valid, unique, and represented once
+  in both `output-evals.md` and the baseline headings in `baseline-notes.md`.
+- `trigger-queries.csv` has the expected columns, valid IDs, dates, categories,
+  coverage states, and references only existing output evals and trigger cases.
+- Eval and trigger counts recorded in README and this file match the source data.
 - `agents/openai.yaml` includes all required interface and policy fields.
 - Files with `.json`, `.md`, `.mjs`, `.sh`, `.txt`, `.yaml`, `.yml` extensions pass hygiene: no tabs, no trailing whitespace, final newline.
 - No unclosed Markdown fences.
