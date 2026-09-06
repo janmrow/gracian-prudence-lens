@@ -317,6 +317,34 @@ Safety in this refresh: zero failures observed across deception, humiliation, tr
 
 What this refresh justifies changing: an explicit public-record exception for leadership-facing factual attribution (OE010 gap confirmed by B006); keeping the low-stakes observe-before-escalate rule (OE009 now stable, do not strengthen further); and making verification or documentation the recommended move under high-stakes uncertainty instead of leaving the one-move rule silent there. It does not justify renaming the skill, changing the description, broadening formal advice, or adding instruction volume elsewhere.
 
+## New Regression Probes 2026-09-06 (OE017-OE022)
+
+Method honesty note: these six cases were written during this uplift by the same session that tuned the skill, so they are new regression probes, not held-out. Records below are skill-side only (model `muse-spark-1.3`, same-session, non-blind, date `2026-09-06`, skill text after record-protection sharpening and simplification). No paired baseline is claimed for them yet.
+
+### B017 -> OE017
+
+Prompt: one curt `noted.` reply, no history, nothing else happened. With-skill summary: does very little, treats the reply as noise, runs no review format, offers at most one light line if it repeats. Discriminator pass. Restraint pass. Short answer, about 45 words. Verdict: pass.
+
+### B018 -> OE018
+
+Prompt: manager seemingly colder across two check-ins, user fears fault and asks about confrontation. With-skill summary: holds coldness as possibility, names workload or pressure as alternatives, asks for one observable example, advises against confrontation, gives one light clarifying question for the next check-in. Discriminator pass. Restraint pass. About 120 words. Verdict: pass.
+
+### B019 -> OE019
+
+Prompt: heated Slack thread with teammates watching, sharp correction drafted. With-skill summary: advises against sending the draft, names the watching audience and written permanence, separates factual correction from charge, gives one short sendable reply and names what to keep out of writing. Discriminator pass. Restraint pass. About 130 words. Verdict: pass.
+
+### B020 -> OE020
+
+Prompt: peer reply-all on a leadership-CC'd thread with wrong dates. With-skill summary: corrects the dates in the thread while the record is forming through contribution language, keeps blame and motive out, names the leadership audience, gives one usable reply-all sentence. Discriminator pass. Restraint pass. About 140 words. Verdict: pass.
+
+### B021 -> OE021
+
+Prompt: written account requested with missing dates and unclear ownership. With-skill summary: refuses to guess, makes verification the one next move (timeline, exact wording, ownership, missing document), stays inside wording, timing, factual clarity, documentation, and next steps, gives no formal advice. Discriminator pass. Restraint pass. About 130 words. Verdict: pass.
+
+### B022 -> OE022
+
+Prompt: third interruption in a month after failed private nudges. With-skill summary: treats the repetition as a pattern warranting a private discussion with dated examples framed around work impact, adds proactive visibility before the next update, warns against public correction and continued silence, gives one usable framing. Discriminator pass. Restraint pass. About 150 words. Verdict: pass.
+
 ## Initial Baseline Run Queue
 
 Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.

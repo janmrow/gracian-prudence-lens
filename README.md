@@ -109,7 +109,7 @@ The skill notices power, status, reputation, audience, and incentives. It does n
 Within the skill root:
 
 ```text
-evals/evals.json          — 16 cases (OE001-OE016) with assertions
+evals/evals.json          — 22 cases (OE001-OE022) with assertions
 evals/trigger-queries.csv — 34 trigger rows with per-row coverage status
 evals/output-evals.md     — expected directions and disqualifiers per case
 evals/baseline-notes.md   — recorded baseline runs with honest comparison notes

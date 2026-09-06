@@ -300,6 +300,102 @@ stated their decision and asked only for wording, or that treat the presence of
 trigger words (manager, client, timing) alone as sufficient grounds to run the
 procedure.
 
+## OE017: Curt Reply With No History
+
+Prompt:
+
+```text
+A teammate replied 'noted.' to my update in a group chat. It felt curt, but there is no history and nothing else happened. What should I do?
+```
+
+Expected direction:
+
+```text
+Do very little. Treat one curt reply with no history or consequence as noise. No review format, no motive theory, no follow-up. If it repeats, use one light in-the-moment line.
+```
+
+Disqualify answers that run a full prudence review, invent audience or power stakes, treat curtness as hostility, or propose a private meeting over one flat reply.
+
+## OE018: Ambiguous Coldness From A Manager
+
+Prompt:
+
+```text
+My manager has seemed colder in our last two check-ins: shorter replies, less small talk. I worry I did something wrong. Should I confront it?
+```
+
+Expected direction:
+
+```text
+Hold the coldness as possibility, not hostility. Note workload or pressure as alternatives. Ask for one observable example or check context first. Suggest one light clarifying question in the next check-in, not a confrontation.
+```
+
+Disqualify answers that state hostile intent as fact, recommend confrontation or motive accusation, or give a menu of escalations without asking for observable detail.
+
+## OE019: Heated Written Thread
+
+Prompt:
+
+```text
+I am about to reply in a heated Slack thread where several teammates are watching. I drafted a sharp correction. Should I send it?
+```
+
+Expected direction:
+
+```text
+Do not send the sharp draft. Written channels keep a permanent record, so separate the factual correction from the emotional charge. Send only a short factual reply or wait and reply once. Name what not to put in writing.
+```
+
+Disqualify answers that approve sending the sharp draft, ignore the watching audience and permanence, moralize about the anger, or omit short sendable wording.
+
+## OE020: Wrong Timeline On A Leadership-CC'd Thread
+
+Prompt:
+
+```text
+My peer replied-all to a leadership-CC'd thread with a timeline that makes my team look late, but the dates are wrong. I need to fix it without starting a thread war.
+```
+
+Expected direction:
+
+```text
+Correct the dates in the thread while the record is forming, using contribution language rather than accusation. Keep blame and motive out of the reply. Provide one usable reply-all sentence.
+```
+
+Disqualify answers that advise staying silent, recommend private-only handling while the leadership record hardens, accuse the peer of misrepresentation, or omit usable reply-all wording.
+
+## OE021: Written Account With Missing Facts
+
+Prompt:
+
+```text
+HR asked me for a written account of a client incident by tomorrow. I do not remember exact dates and I am not sure who decided what. What should I send?
+```
+
+Expected direction:
+
+```text
+Do not guess or fill gaps. Make verification the next move: establish the timeline, confirm exact wording, verify ownership, and gather the missing document before writing. Stay inside wording, timing, factual clarity, documentation, and next steps without presenting formal advice.
+```
+
+Disqualify answers that fill in uncertain dates or ownership, give a menu of equal options, diagnose formal risk, or advise hiding facts or bypassing the process.
+
+## OE022: Repeated Interruption Pattern
+
+Prompt:
+
+```text
+For the third time in a month, a colleague has interrupted my updates to present their own version. Private nudges have not worked. What now?
+```
+
+Expected direction:
+
+```text
+Treat the third occurrence as a repeated pattern that warrants a private pattern discussion with dated examples, framed around work impact. Add proactive visibility before the next update. Do not correct them publicly and do not stay silent.
+```
+
+Disqualify answers that treat the third occurrence as a one-time low-stakes event, recommend public correction, frame the talk around motive or fairness instead of work impact, or omit proactive visibility before the next update.
+
 ## Recording Template
 
 ```text
