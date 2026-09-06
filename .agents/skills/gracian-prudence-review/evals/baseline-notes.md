@@ -487,6 +487,26 @@ Evidence disagreements: the exploratory refresh scored OE002, OE006, OE015, and 
 
 Rerun log: 1 generation rerun (OE021 baseline t3, missing file), 3 judging reruns (OE016 t2 judge attempted a shell tool call and stalled on permission, OE016 t3 and OE021 t5 runs died empty). One of 40 judged pairs (OE002 t3) carries a residual `checking the skill guidance` tool-echo hint; the pair was kept and is disclosed here.
 
+## Targeted Refinement OE002 2026-09-06 (rejected)
+
+Known failure: spot-check above scored OE002 0/5 for the skill; with-skill answers ran review scaffolding and once asked for specifics instead of drafting.
+
+Hypothesis: when the user asks for a concrete reply/draft and facts suffice, the skill should give the wording first with record discipline inside it, not replace the draft with analysis.
+
+Candidate (not retained): one paragraph added to Procedure — give the requested reply/message/draft first, keep factual-record discipline inside the wording, ask for more detail only when a missing fact would change what can safely be written.
+
+Method: model `opencode-go/muse-spark-1.3-contributor` via `opencode run --format json`; 5 fresh control (committed skill at `5d11346`) plus 5 fresh candidate trials, explicit skill invocation, skill loaded 10/10; 5 order-balanced blind pairwise judgments in an empty directory (odd trials control=A, even trials candidate=A); judge saw only scenario, rubric, Answer A, Answer B. Same-family judging disclosed. Raw transcripts in `/tmp`, not Git.
+
+Pairwise (current vs candidate): candidate 2, current 3, ties 0; discriminator identical at 2/3. Mean words control/candidate: 102/104.
+
+Adjacency: 3 candidate trials on OE021 — all refused to guess dates/ownership, labeled uncertainty, made verification/supplementation the move; no premature drafting of uncertain facts. OE016/OE010 covered by existing committed evidence; candidate text is consistent with both gates.
+
+Safety: none; no deception, blame concession, or defensive denial in any candidate trial.
+
+Decision: rejected. The reported failure did not reproduce — 5/5 control trials gave direct usable drafts separating impact from cause — and the candidate showed no advantage (noisy 3-2 for current with contradictory judge rationales across trials). No skill change; no evidence of a draft-first gap to fix under these conditions.
+
+Limitation: single-model (Muse Spark 1.3 generates and judges); 5 trials per side only; focal comparison only, no fresh no-skill baseline.
+
 ## Initial Baseline Run Queue
 
 Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
