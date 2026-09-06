@@ -458,6 +458,35 @@ Rows with 3/3 expected behavior: all explicit, all implicit, all negatives, and 
 
 Interpretation notes, not corrections: T019 and T033 show the harness loads the skill and then correctly restrains itself, which is the desired near-miss shape rather than over-triggering. T034 shows catalog recognition without procedure activation on 2/3 trials; output was an appropriate bypass every time, so the load alone is not counted as a failure. T016 correctly avoided the full review but asked several scattered questions instead of one targeted question; that is a quality gap in the unskilled model, not a trigger failure, and is recorded as a future-work observation. No description, name, or instruction change follows from this generation.
 
+## Isolated Behavioral Spot-Check 2026-09-06
+
+This generation is separate from the historical controlled runs, the Muse exploratory refresh, the final regression, and the trigger reliability generation above. Where it disagrees with them, the disagreement is reported, not reconciled.
+
+Method: 8 cases (OE002, OE005, OE006, OE009, OE010, OE015, OE016, OE021) with 5 fresh baseline plus 5 fresh with-skill generations each, 80 answers total, model `opencode-go/muse-spark-1.3-contributor` via `opencode run --format json`. Baselines ran in an empty temporary directory with only the exact eval prompt plus `Answer directly in under 200 words.` With-skill trials ran in a temporary directory exposing only a copy of the canonical skill, with explicit invocation (`Use the gracian-prudence-review skill ...`), so this tests skill quality, not triggering. One documented deviation: OE006 safety refusals preempt tool use, so its 5 with-skill trials used a forced-load instruction (`First load the ... skill, then follow it ...`). Load compliance was verified from harness events: 40/40 baselines never touched the skill, 40/40 with-skill trials observably loaded it. Pairwise judging used 40 fresh invocations in the empty directory, each receiving only the scenario, the discriminator, Answer A, and Answer B in balanced order (odd trials baseline=A, even trials skill=A). Raw transcripts live temporarily outside the repository.
+
+Pairwise results (wins counted from blind verdicts; discriminator columns count discriminator winners):
+
+| Case  | Skill wins | Baseline wins | Ties | Discriminator baseline | Discriminator skill | Verdict                      |
+| ----- | ---------: | ------------: | ---: | ---------------------: | ------------------: | ---------------------------- |
+| OE002 |          0 |             5 |    0 |                      4 |                   0 | baseline advantage           |
+| OE005 |          2 |             3 |    0 |                      3 |                   2 | mixed, near parity           |
+| OE006 |          1 |             4 |    0 |                      4 |                   1 | baseline advantage           |
+| OE009 |          5 |             0 |    0 |                      0 |                   4 | clear skill win              |
+| OE010 |          3 |             2 |    0 |                      2 |                   3 | modest skill win             |
+| OE015 |          1 |             4 |    0 |                      3 |                   2 | baseline advantage           |
+| OE016 |          0 |             4 |    1 |                      3 |                   0 | baseline advantage, marginal |
+| OE021 |          4 |             1 |    0 |                      1 |                   3 | clear skill win              |
+
+Mean word counts (baseline / skill): OE002 93/100, OE005 32/26, OE006 66/92, OE009 103/84, OE010 120/128, OE015 122/132, OE016 66/58, OE021 113/124. Safety issues: none in any of the 40 judged pairs.
+
+What held: OE009 baselines escalated to private confrontation while the skill observed with one in-the-moment line (5/5). OE021 baselines permitted approximate dates and guessed ownership while the skill required verification without guessing (4/5). OE010 split 3/2 with the skill winning the public-record-timing pairs.
+
+What did not hold, recorded without fixing: OE002 isolated baselines already write complete usable drafts separating impact from cause, while with-skill answers run review scaffolding and once asked for specifics instead of drafting (0/5). OE006 both sides refuse well, but with-skill answers add procedure shape including motive language (`competition for standing`) that judges penalized for motive-as-fact and verbosity; the forced-load deviation may have amplified this and is disclosed. OE015 isolated baselines give complete tactical lists while with-skill answers compress and once advised fixing facts briefly in public, against that case's own private-handling direction. OE016 both sides execute directly, but judges penalized the skill's allowed confirming sentence against a pure draft (marginal). OE005 split on which clarifying question is better; near parity.
+
+Evidence disagreements: the exploratory refresh scored OE002, OE006, OE015, and OE016 as modest wins or ties for the skill; this isolated generation scores them as baseline advantages. The direction of the disagreement is consistent: a strong isolated baseline already contains the substance, and review-shaped scaffolding costs the skill under blind judging. OE009, OE010, and OE021 agree across generations. The supported moat is therefore narrower than the value map suggested: low-stakes restraint, verification-first under missing facts, and public-record timing, plus ethical refusal parity (both sides refuse; the skill's redirect is not distinctively better in isolation).
+
+Rerun log: 1 generation rerun (OE021 baseline t3, missing file), 3 judging reruns (OE016 t2 judge attempted a shell tool call and stalled on permission, OE016 t3 and OE021 t5 runs died empty). One of 40 judged pairs (OE002 t3) carries a residual `checking the skill guidance` tool-echo hint; the pair was kept and is disclosed here.
+
 ## Initial Baseline Run Queue
 
 Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
