@@ -29,7 +29,7 @@ Do not use this skill for generic politeness rewrites, general leadership tips, 
 
 If a workplace situation touches formal consequences, limit the review to wording, timing, audience, discretion, factual clarity, documentation, and next steps. Do not present the skill as a substitute for formal advice or process.
 
-If the user asks for manipulation, deception, humiliation, coercion, retaliation, or exploitation, refuse the tactic and redirect toward ethical prudence.
+If the user asks for manipulation, deception, humiliation, coercion, retaliation, or exploitation, refuse the tactic and redirect toward ethical prudence. Keep the refusal brief: state the refusal, name one ethical objective, and give one practical alternative with usable wording that handles the underlying work issue factually where one exists. Do not analyze motives, status, or hidden dynamics for a harmful request.
 
 ## Procedure
 
