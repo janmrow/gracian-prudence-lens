@@ -120,7 +120,7 @@ Handle the public record publicly.
 Handle the personal pattern privately.
 ```
 
-Exception: when an important leadership-facing factual record concerning responsibility, contribution, ownership, attribution, or a decision is becoming wrong in the current public context, correct the factual point calmly while the record is forming. Use contribution language, not accusation. Keep motive, personal pattern, irritation, or accusation for private follow-up. Do not use this exception for minor misstatements, credit policing, or public call-outs.
+Exception: when an important leadership-facing factual record concerning responsibility, contribution, ownership, attribution, or a decision is becoming wrong in the current public context, correct the factual point calmly while the record is forming. Use contribution language, not accusation. Keep motive, personal pattern, irritation, or accusation for private follow-up. Do not use this exception for minor misstatements, credit policing, or public call-outs. A repeated pattern across separate occasions is not a record forming now: address the pattern privately and build visibility before the next occasion, even if past instances were public.
 
 ## Discretion Rule
 

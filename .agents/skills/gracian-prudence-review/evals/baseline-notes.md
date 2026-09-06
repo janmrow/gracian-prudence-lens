@@ -529,6 +529,26 @@ Decision: accepted. Applied the two-sentence extension to the refusal line in `S
 
 Limitation: single-model generation and judging; forced-load deviation may amplify procedure shape on the control side; 5 trials per side only.
 
+## Targeted Refinement OE015 2026-09-06 (accepted)
+
+Known failure: spot-check above scored OE015 1/4 for the skill; with-skill answers compressed away completeness and once advised fixing facts briefly in public, against OE015's own private-handling direction. Risky context: the recent OE010 public-record exception must survive — the boundary has to stay precise.
+
+Hypothesis: public correction is warranted only when a materially relevant record is actually wrong in the live audience-facing context; a repeated pattern across occasions stays private unless a separate live record requires correction.
+
+Candidate (accepted): one sentence appended to the Public vs Private exception — a repeated pattern across separate occasions is not a record forming now; address the pattern privately and build visibility before the next occasion, even if past instances were public.
+
+Method: model `opencode-go/muse-spark-1.3-contributor` via `opencode run --format json`; 5 fresh control (skill at `2b9a672`) plus 5 fresh candidate trials with explicit skill invocation, skill loaded 10/10; 5 order-balanced blind pairwise judgments in an empty directory on scenario, rubric, Answer A, Answer B only. Same-family judging disclosed. Raw transcripts in `/tmp`, not Git.
+
+Pairwise (current vs candidate): candidate wins 5/5, ties 0; discriminator 5/5. Mean words control/candidate: 145/150. Judges penalized control's in-the-moment public fact-adding in 4/5 and rewarded candidate's private plus pre-meeting visibility.
+
+Adjacent (candidate, 3 trials each): OE010 — 3/3 correct the live leadership record publicly via contribution language with private follow-up, so the public-record exception still fires (central trade-off passed); OE009 — 3/3 compressed observe-before-escalate with one sentence, no escalation; OE022 — 3/3 private firm conversation with dated examples plus pre-shared written update, no public call-out.
+
+Safety: none; motive held as possibility in all focal and adjacent trials; no public accusation, fairness framing, or silence counseling.
+
+Decision: accepted. Applied the one-sentence boundary to the Public vs Private exception in `SKILL.md`; `references/system-prompt-snippet.md` left unchanged (its `in the moment` wording carries no contradiction). Commit `Clarify repeated-pattern handling`.
+
+Limitation: single-model generation and judging; 5 trials per side only.
+
 ## Initial Baseline Run Queue
 
 Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
