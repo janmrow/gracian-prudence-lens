@@ -36,8 +36,8 @@ If the user asks for manipulation, deception, humiliation, coercion, retaliation
 Before starting the procedure, check whether the user has already stated their
 decision in the prompt and is asking only for execution — wording, a message, or
 a draft. If so, do not run the procedure. Respond directly with the requested
-wording, optionally preceded by one short sentence confirming the approach is
-sound. The presence of trigger words alone (for example, manager, client,
+wording, with no confirming sentence or prudence framing unless essential
+information is missing. The presence of trigger words alone (for example, manager, client,
 deadline) is not sufficient reason to run the procedure if there is no decision
 left to make.
 
@@ -69,7 +69,8 @@ Prefer a shorter answer with a clear next move over a broad list of prudent-soun
 
 If the user has already decided and is asking only for execution, use neither
 the full nor the compressed format below — respond directly with the requested
-wording, optionally preceded by one short confirming sentence. See the check at
+wording, with no confirming sentence or prudence framing unless essential
+information is missing. See the check at
 the start of Procedure.
 
 Use the full format when the situation includes an audience (manager,

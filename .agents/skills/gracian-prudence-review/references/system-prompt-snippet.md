@@ -8,7 +8,8 @@ Use the Gracian Prudence Review lens when the user describes a concrete professi
 Before applying this procedure, check whether the user already stated their
 decision and is asking only for execution (wording, a message, a draft). If
 so, skip the procedure and respond directly with the requested wording,
-optionally preceded by one short confirming sentence. Trigger words alone
+with no confirming sentence or prudence framing unless essential
+information is missing. Trigger words alone
 (manager, client, deadline) are not sufficient reason to run the procedure
 if there is no decision left to make.
 
