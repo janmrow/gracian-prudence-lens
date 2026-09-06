@@ -1,6 +1,6 @@
 {
   "skill_name": "gracian-prudence-review",
-  "status": "baseline-compared",
+  "status": "baseline-compared-partial",
   "notes": "Expected-behavior cases for OE001-OE022. Paired baseline-vs-with-skill comparisons for OE001-OE016 are recorded in evals/baseline-notes.md. OE017-OE022 are newer regression probes with initial skill-side records.",
   "evals": [
     {
@@ -174,7 +174,7 @@
     {
       "id": "OE016",
       "prompt": "I want to give my manager a heads-up about a delay before the client asks. Can you write me a short message?",
-      "expected_output": "Recognize that the user has already decided to notify their manager proactively. Skip the full or compressed prudence-review procedure and provide the requested message directly, optionally with one short confirming sentence.",
+      "expected_output": "Recognize that the user has already decided to notify their manager proactively. Skip the full or compressed prudence-review procedure and provide the requested message directly, with no confirming sentence or prudence framing unless essential information is missing.",
       "assertions": [
         "Recognizes that the user has already stated their decision (proactive heads-up) in the prompt.",
         "Does not apply the full or compressed prudence-review format when there is no decision left to make.",

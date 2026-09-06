@@ -2,7 +2,7 @@
 
 All notable changes to `gracian-prudence-review` should be recorded here.
 
-## 0.2.0
+## 0.2.0 (unreleased)
 
 - Run CI for every pull request and add deterministic cross-file consistency
   checks for structured evals, trigger coverage, baseline records, and documented
@@ -10,8 +10,15 @@ All notable changes to `gracian-prudence-review` should be recorded here.
 - Added a discriminator-first eval protocol (`evals/eval-protocol.md`) that
   separates absolute quality, incremental value, discriminator behavior,
   triggering, and restraint.
-- Refreshed baseline evidence against Muse Spark 1.3: 2 clear wins, 10 modest
-  wins, 4 ties, and no regressions across OE001-OE016.
+- Refreshed baseline evidence against Muse Spark 1.3 (exploratory generation):
+  2 clear wins, 10 modest wins, 4 ties, and no regressions across OE001-OE016.
+- Later isolated blind comparison (Muse/OpenCode harness, 5 trials per side on
+  OE002, OE005, OE006, OE009, OE010, OE015, OE016, OE021) narrowed the
+  demonstrated moat: clear skill wins on OE009 and OE021 and a modest win on
+  OE010, near parity on OE005, and baseline advantages on OE002, OE006, OE015,
+  and OE016 (marginal). Later candidate-vs-current refinements improved OE006,
+  OE015, and OE016 versus the prior skill text but were not re-tested against
+  a fresh no-skill baseline, so they are not claimed as baseline wins.
 - Sharpened `SKILL.md` with a public-record exception for leadership-facing
   factual attribution and a verification-as-move rule for high-stakes
   uncertainty.

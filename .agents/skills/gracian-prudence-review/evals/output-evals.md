@@ -291,7 +291,8 @@ Expected direction:
 ```text
 Recognize that the user has already decided to notify their manager proactively.
 Skip the full or compressed prudence-review procedure and provide the requested
-message directly, optionally with one short confirming sentence.
+message directly, with no confirming sentence or prudence framing unless
+essential information is missing.
 ```
 
 Disqualify answers that apply a full or compressed decision-review structure

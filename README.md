@@ -83,12 +83,22 @@ Concretely, a good answer identifies the user's actual decision, separates the v
 
 The skill has recorded paired baseline and with-skill comparisons for structured output evals `OE001`-`OE016`, plus newer skill-side regression probes `OE017`-`OE022`. Most paired comparisons use unguided `gpt-5.5` responses as the baseline; `OE003`, `OE005`, `OE007`, and `OE009` use selected Claude Code Sonnet comparisons, and a 2026-09-06 refresh re-checked all sixteen against Muse Spark 1.3. This is evidence for the listed cases, not a full cross-model validation matrix. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
 
-Where the skill added the most value:
+Where the skill added the most value in the strongest isolated comparison
+(blind Muse/OpenCode runs, 5 trials per side):
 
-- **Factual-record protection**: client blame and formal-consequence cases stayed closer to what belongs in the record versus what belongs privately; leadership-facing attribution is corrected calmly while the record is forming, without accusation.
-- **Motive restraint**: credit ambiguity and manipulation-refusal cases named hidden dynamics as possibilities, not facts.
-- **Public/private sequencing**: meeting challenges and bypassed-channel cases separated what to handle in the room from what to follow up privately.
-- **Emotional timing**: angry-reply cases named what not to reveal, not just whether to wait.
+- **Low-stakes restraint (OE009)** and **verification-first under missing facts
+  (OE021)**: clear skill wins.
+- **Public-record timing (OE010)**: modest skill win; leadership-facing
+  attribution is corrected calmly while the record is forming, without
+  accusation.
+
+The skill also intentionally enforces factual-record protection, motive
+restraint, public/private sequencing, and emotional timing, but later isolated
+runs showed strong baseline parity or baseline advantage on those drafting
+cases (OE002, OE006, OE015, OE016 marginal), so they are not claimed as
+demonstrated baseline wins. Candidate-vs-current refinements later tightened
+OE006, OE015, and OE016 versus the prior skill text without a fresh no-skill
+baseline re-test.
 
 Where baseline was already strong, such as scope pushback and senior correction, the skill improved compression and decision clarity, but the gap was modest. Those results are recorded honestly.
 
