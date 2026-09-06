@@ -1,7 +1,7 @@
 {
   "skill_name": "gracian-prudence-review",
-  "status": "baseline-compared",
-  "notes": "Expected-behavior cases for OE001-OE016. Paired baseline-vs-with-skill comparisons are recorded in evals/baseline-notes.md.",
+  "status": "baseline-compared-partial",
+  "notes": "Expected-behavior cases for OE001-OE022. Paired baseline-vs-with-skill comparisons for OE001-OE016 are recorded in evals/baseline-notes.md. OE017-OE022 are newer regression probes with initial skill-side records.",
   "evals": [
     {
       "id": "OE001",
@@ -174,13 +174,81 @@
     {
       "id": "OE016",
       "prompt": "I want to give my manager a heads-up about a delay before the client asks. Can you write me a short message?",
-      "expected_output": "Recognize that the user has already decided to notify their manager proactively. Skip the full or compressed prudence-review procedure and provide the requested message directly, optionally with one short confirming sentence.",
+      "expected_output": "Recognize that the user has already decided to notify their manager proactively. Skip the full or compressed prudence-review procedure and provide the requested message directly, with no confirming sentence or prudence framing unless essential information is missing.",
       "assertions": [
         "Recognizes that the user has already stated their decision (proactive heads-up) in the prompt.",
         "Does not apply the full or compressed prudence-review format when there is no decision left to make.",
         "Provides the requested wording directly rather than embedding it inside decision-analysis scaffolding.",
         "Does not treat the presence of trigger words (manager, client, timing) alone as sufficient reason to apply the procedure.",
         "The response is not meaningfully longer than a direct wording request would warrant."
+      ]
+    },
+    {
+      "id": "OE017",
+      "prompt": "A teammate replied 'noted.' to my update in a group chat. It felt curt, but there is no history and nothing else happened. What should I do?",
+      "expected_output": "Do very little. Treat one curt reply with no history or consequence as noise. No review format, no motive theory, no follow-up. If it repeats, use one light in-the-moment line.",
+      "assertions": [
+        "Does not run a full prudence review for an isolated curt reply.",
+        "Does not invent audience, power, or reputational risk beyond the chat itself.",
+        "Treats the curtness as noise, not evidence of hostility.",
+        "Chooses inaction plus observation, with at most one usable line if it repeats."
+      ]
+    },
+    {
+      "id": "OE018",
+      "prompt": "My manager has seemed colder in our last two check-ins: shorter replies, less small talk. I worry I did something wrong. Should I confront it?",
+      "expected_output": "Hold the coldness as possibility, not hostility. Note alternative explanations such as workload or pressure. Ask for one observable example or check context before concluding. Suggest one light clarifying question in the next check-in, not a confrontation.",
+      "assertions": [
+        "Treats hostility as possible, not certain, and names workload or pressure as alternatives.",
+        "Does not recommend confrontation or a motive accusation.",
+        "Asks for observable detail or context that would change the read.",
+        "Chooses one low-key clarifying move with usable wording."
+      ]
+    },
+    {
+      "id": "OE019",
+      "prompt": "I am about to reply in a heated Slack thread where several teammates are watching. I drafted a sharp correction. Should I send it?",
+      "expected_output": "Do not send the sharp draft. Written channels keep a permanent record, so separate the factual correction from the emotional charge. Send only a short factual reply or wait and reply once. Name what not to put in writing.",
+      "assertions": [
+        "Identifies the watching audience and the permanence of the written record.",
+        "Advises against sending the sharp draft as written.",
+        "Separates the factual correction from irritation or motive claims.",
+        "Provides one short sendable reply and names what to keep out of writing."
+      ]
+    },
+    {
+      "id": "OE020",
+      "prompt": "My peer replied-all to a leadership-CC'd thread with a timeline that makes my team look late, but the dates are wrong. I need to fix it without starting a thread war.",
+      "expected_output": "Correct the dates in the thread while the record is forming, using contribution language rather than accusation. Keep blame and motive out of the reply. Provide one usable reply-all sentence.",
+      "assertions": [
+        "Recommends correcting the factual record in the thread, not privately only.",
+        "Uses contribution language rather than accusing the peer of misrepresentation.",
+        "Identifies the leadership audience as the reason timing matters.",
+        "Warns against staying silent and against a public accusation.",
+        "Provides one usable reply-all sentence."
+      ]
+    },
+    {
+      "id": "OE021",
+      "prompt": "HR asked me for a written account of a client incident by tomorrow. I do not remember exact dates and I am not sure who decided what. What should I send?",
+      "expected_output": "Do not guess or fill gaps. Make verification the next move: establish the timeline, confirm exact wording, verify ownership, and gather the missing document before writing. Stay inside wording, timing, factual clarity, documentation, and next steps without presenting formal advice.",
+      "assertions": [
+        "Recommends verification or documentation as the one next move, not a menu.",
+        "Warns against guessing at dates, wording, or ownership.",
+        "Limits the review to wording, timing, audience, factual clarity, documentation, and next steps.",
+        "Does not present the output as formal HR or legal advice."
+      ]
+    },
+    {
+      "id": "OE022",
+      "prompt": "For the third time in a month, a colleague has interrupted my updates to present their own version. Private nudges have not worked. What now?",
+      "expected_output": "Treat the third occurrence as a repeated pattern that warrants a private pattern discussion with dated examples, framed around work impact. Add proactive visibility before the next update. Do not correct them publicly and do not stay silent.",
+      "assertions": [
+        "Distinguishes a repeated pattern from a one-time low-stakes incident.",
+        "Recommends a private conversation with specific examples, framed around work impact rather than motive.",
+        "Recommends proactive visibility before the next update.",
+        "Warns against public correction and against continued silence.",
+        "Provides one usable framing for the private conversation."
       ]
     }
   ]

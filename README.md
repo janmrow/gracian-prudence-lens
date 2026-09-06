@@ -81,14 +81,24 @@ Concretely, a good answer identifies the user's actual decision, separates the v
 
 ## Baseline evidence
 
-The skill has recorded paired baseline and with-skill comparisons for all structured output evals `OE001`-`OE016`. Most comparisons use unguided `gpt-5.5` responses as the baseline; `OE003`, `OE005`, `OE007`, and `OE009` use selected Claude Code Sonnet comparisons. This is evidence for the listed cases, not a full cross-model validation matrix. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
+The skill has recorded paired baseline and with-skill comparisons for structured output evals `OE001`-`OE016`, plus newer skill-side regression probes `OE017`-`OE022`. Most paired comparisons use unguided `gpt-5.5` responses as the baseline; `OE003`, `OE005`, `OE007`, and `OE009` use selected Claude Code Sonnet comparisons, and a 2026-09-06 refresh re-checked all sixteen against Muse Spark 1.3. This is evidence for the listed cases, not a full cross-model validation matrix. Results are recorded in `.agents/skills/gracian-prudence-review/evals/baseline-notes.md`.
 
-Where the skill added the most value:
+Where the skill added the most value in the strongest isolated comparison
+(blind Muse/OpenCode runs, 5 trials per side):
 
-- **Factual-record protection**: client blame and formal-consequence cases stayed closer to what belongs in the record versus what belongs privately.
-- **Motive restraint**: credit ambiguity and manipulation-refusal cases named hidden dynamics as possibilities, not facts.
-- **Public/private sequencing**: meeting challenges and bypassed-channel cases separated what to handle in the room from what to follow up privately.
-- **Emotional timing**: angry-reply cases named what not to reveal, not just whether to wait.
+- **Low-stakes restraint (OE009)** and **verification-first under missing facts
+  (OE021)**: clear skill wins.
+- **Public-record timing (OE010)**: modest skill win; leadership-facing
+  attribution is corrected calmly while the record is forming, without
+  accusation.
+
+The skill also intentionally enforces factual-record protection, motive
+restraint, public/private sequencing, and emotional timing, but later isolated
+runs showed strong baseline parity or baseline advantage on those drafting
+cases (OE002, OE006, OE015, OE016 marginal), so they are not claimed as
+demonstrated baseline wins. Candidate-vs-current refinements later tightened
+OE006, OE015, and OE016 versus the prior skill text without a fresh no-skill
+baseline re-test.
 
 Where baseline was already strong, such as scope pushback and senior correction, the skill improved compression and decision clarity, but the gap was modest. Those results are recorded honestly.
 
@@ -109,13 +119,13 @@ The skill notices power, status, reputation, audience, and incentives. It does n
 Within the skill root:
 
 ```text
-evals/evals.json          — 16 cases (OE001-OE016) with assertions
+evals/evals.json          — 22 cases (OE001-OE022) with assertions
 evals/trigger-queries.csv — 34 trigger rows with per-row coverage status
 evals/output-evals.md     — expected directions and disqualifiers per case
 evals/baseline-notes.md   — recorded baseline runs with honest comparison notes
 ```
 
-Recorded paired baseline runs currently cover `OE001`-`OE016`. Trigger coverage is still partial: in `trigger-queries.csv`, `date_run` means that exact trigger row was exercised, while `coverage_status` distinguishes rows with a recorded paired baseline from rows that were only exercised for trigger behavior.
+Recorded paired baseline runs cover `OE001`-`OE016`; `OE017`-`OE022` are newer regression probes with skill-side records rather than paired baselines. Trigger coverage is still partial: in `trigger-queries.csv`, `date_run` means that exact trigger row was exercised, while `coverage_status` distinguishes rows with a recorded paired baseline from rows that were only exercised for trigger behavior.
 
 19 trigger rows are intentionally left as `trigger_exercised_only`: they
 exercise trigger, near-miss, and negative behavior without a paired
@@ -125,8 +135,7 @@ not a gap awaiting completion.
 
 ## Status
 
-`0.1.0` — behavior is stable, OE001-OE016 have recorded paired baseline
-comparisons, and trigger coverage is documented as a deliberate boundary
+`0.2.0` (in development, unreleased) — behavior is sharpened with a public-record exception and a verification-as-move rule, `OE001`-`OE022` have recorded runs with a final regression pass, and trigger coverage is documented as a deliberate boundary
 (see Evals). The package is not currently submitted to a skill registry.
 
 ## Repository map
@@ -152,6 +161,4 @@ NOTICE.md
 
 ## Project status
 
-As of 2026-07-02, this project is feature-frozen and not under active
-development. It remains available for use and adaptation as-is. Issues and
-PRs may not receive timely responses.
+Active development resumed in September 2026 for the 0.2.0 quality uplift. The package remains available for use and adaptation as-is.

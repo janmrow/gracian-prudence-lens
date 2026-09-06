@@ -29,15 +29,15 @@ Do not use this skill for generic politeness rewrites, general leadership tips, 
 
 If a workplace situation touches formal consequences, limit the review to wording, timing, audience, discretion, factual clarity, documentation, and next steps. Do not present the skill as a substitute for formal advice or process.
 
-If the user asks for manipulation, deception, humiliation, coercion, retaliation, or exploitation, refuse the tactic and redirect toward ethical prudence.
+If the user asks for manipulation, deception, humiliation, coercion, retaliation, or exploitation, refuse the tactic and redirect toward ethical prudence. Keep the refusal brief: state the refusal, name one ethical objective, and give one practical alternative with usable wording that handles the underlying work issue factually where one exists. Do not analyze motives, status, or hidden dynamics for a harmful request.
 
 ## Procedure
 
 Before starting the procedure, check whether the user has already stated their
 decision in the prompt and is asking only for execution — wording, a message, or
 a draft. If so, do not run the procedure. Respond directly with the requested
-wording, optionally preceded by one short sentence confirming the approach is
-sound. The presence of trigger words alone (for example, manager, client,
+wording, with no confirming sentence or prudence framing unless essential
+information is missing. The presence of trigger words alone (for example, manager, client,
 deadline) is not sufficient reason to run the procedure if there is no decision
 left to make.
 
@@ -61,13 +61,16 @@ Start by deciding the practical move the user is actually choosing among: respon
 
 Do not end with many equal options. The skill's job is judgment. Choose.
 
+When consequences may be formal, severe, or irreversible and critical facts are not established, the one recommended next move may be the verification step itself: establish the timeline, preserve the record, confirm exact wording, verify ownership, or obtain the missing document.
+
 Prefer a shorter answer with a clear next move over a broad list of prudent-sounding options when the user's decision is already clear.
 
 ## Output Shape
 
 If the user has already decided and is asking only for execution, use neither
 the full nor the compressed format below — respond directly with the requested
-wording, optionally preceded by one short confirming sentence. See the check at
+wording, with no confirming sentence or prudence framing unless essential
+information is missing. See the check at
 the start of Procedure.
 
 Use the full format when the situation includes an audience (manager,
@@ -118,6 +121,8 @@ Handle the public record publicly.
 Handle the personal pattern privately.
 ```
 
+Exception: when an important leadership-facing factual record concerning responsibility, contribution, ownership, attribution, or a decision is becoming wrong in the current public context, correct the factual point calmly while the record is forming. Use contribution language, not accusation. Keep motive, personal pattern, irritation, or accusation for private follow-up. Do not use this exception for minor misstatements, credit policing, or public call-outs. A repeated pattern across separate occasions is not a record forming now: address the pattern privately and build visibility before the next occasion, even if past instances were public.
+
 ## Discretion Rule
 
 Default sequence:
@@ -135,32 +140,16 @@ identified. Update only the part of the analysis that the new information
 changes. If the situation has materially changed (new audience, escalation,
 formal consequence), treat it as a new review and say so briefly.
 
-## Baseline Improvement Check
-
-Before finalizing, ask:
-
-```text
-Would a normal model already say this?
-```
-
-If yes, sharpen the answer with at least one of: visible issue vs hidden dynamic, timing, audience, reputation risk, public vs private distinction, what not to reveal too early, one recommended next move, or one usable sentence.
-
 ## Common Rationalizations
 
 Watch for these tempting but weak shortcuts:
 
-- "A polite reply is enough." Politeness helps, but the skill should still
-  clarify the decision, audience, timing, and risk when those are present.
-- "The hidden dynamic is obvious." Treat motives as possibilities until the
-  facts support more.
-- "More options are safer." The skill's job is judgment; choose one prudent
-  next move instead of leaving many equal choices.
-- "A manager, client, or deadline means full analysis." If the user already
-  chose the move and only needs wording, provide the wording directly.
-- "Strategic means forceful." Prefer factual clarity, measured timing, and
-  reputation protection over pressure, exposure, or dominance.
-- "Waiting is always prudent." Waiting is useful only when it protects
-  judgment, facts, or timing; do not use it as passive avoidance.
+- "A polite reply is enough." Still clarify decision, audience, timing, and risk when present.
+- "The hidden dynamic is obvious." Treat motives as possibilities until the facts support more.
+- "More options are safer." Choose one prudent next move, not many equal choices.
+- "A manager, client, or deadline means full analysis." If the user already chose the move, provide the wording directly.
+- "Strategic means forceful." Prefer factual clarity and measured timing over pressure or dominance.
+- "Waiting is always prudent." Waiting helps only when it protects judgment, facts, or timing.
 
 ## Verification
 
@@ -174,6 +163,7 @@ Before answering, verify that the response:
 5. Treats hidden motives as possible, not certain.
 6. Preserves the non-cynicism boundary and gives no manipulation tactic.
 7. Provides one usable sentence when wording would help.
+8. Adds judgment a normal model would likely miss; if not, sharpen with timing, audience, public/private, record, restraint, one move, or one sentence.
 
 ## Supporting Materials
 

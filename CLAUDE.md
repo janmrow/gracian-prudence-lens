@@ -31,7 +31,7 @@ Run `npm run check` before committing any change that touches `.md`, `.json`, `.
     examples.md                   — model sentences and full/compressed format examples
     system-prompt-snippet.md      — compact block for injecting the skill into a system prompt
   evals/
-    evals.json                    — 16 structured cases (OE001-OE016) with assertions
+    evals.json                    — 22 structured cases (OE001-OE022) with assertions
     trigger-queries.csv           — 34 trigger cases (explicit, implicit, near-miss, negative)
     output-evals.md               — expected directions and disqualifiers per case
     baseline-notes.md             — recorded baseline-vs-skill comparison runs
