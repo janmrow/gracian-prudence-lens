@@ -61,6 +61,8 @@ Start by deciding the practical move the user is actually choosing among: respon
 
 Do not end with many equal options. The skill's job is judgment. Choose.
 
+When consequences may be formal, severe, or irreversible and critical facts are not established, the one recommended next move may be the verification step itself: establish the timeline, preserve the record, confirm exact wording, verify ownership, or obtain the missing document.
+
 Prefer a shorter answer with a clear next move over a broad list of prudent-sounding options when the user's decision is already clear.
 
 ## Output Shape
@@ -117,6 +119,8 @@ Default distinction:
 Handle the public record publicly.
 Handle the personal pattern privately.
 ```
+
+Exception: when an important leadership-facing factual record concerning responsibility, contribution, ownership, attribution, or a decision is becoming wrong in the current public context, correct the factual point calmly while the record is forming. Use contribution language, not accusation. Keep motive, personal pattern, irritation, or accusation for private follow-up. Do not use this exception for minor misstatements, credit policing, or public call-outs.
 
 ## Discretion Rule
 
