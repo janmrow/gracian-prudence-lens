@@ -397,6 +397,67 @@ Before/after summary:
 
 Conscious trade-off: a small net size increase was accepted to carry the public-record exception and the verification-as-move sentence, both tied to observed gaps. Everything else consolidated downward.
 
+## Isolated Trigger Reliability Evidence 2026-09-06
+
+This generation is separate from the historical controlled runs, the Muse exploratory refresh, and the final regression above. Do not merge its rates with theirs.
+
+Method: 34 trigger rows multiplied by 3 fresh trials, 102 runs total, model `opencode-go/muse-spark-1.3-contributor` via `opencode run --format json`. Trigger trials ran in a temporary directory exposing only a copy of the canonical skill at `.agents/skills/gracian-prudence-review/`; the skill was never named except where the row prompt itself names it. Each trial sent the exact row prompt plus the neutral suffix `Answer directly in under 150 words.` Activation is directly observed, not inferred from style: a trial counts as loaded only when the harness emits a `skill` tool call for `gracian-prudence-review`. Raw JSON events live temporarily outside the repository; only the compact record below is durable.
+
+Vocabulary: `triggered` (skill loaded and full review entered appropriately), `triggered/clarified` (loaded but correctly asked one question instead of a review), `triggered/compressed-only` (loaded but correctly used the compressed format), `execution_only_gate` (direct wording with no review scaffolding, whether or not the catalog entry was touched), `not_triggered/ordinary-answer`, `not_triggered/clarified`.
+
+Aggregates:
+
+| Category            | Rows                  | Trials | Skill loads | Full-review overreach | Reading                                                                  |
+| ------------------- | --------------------- | ------ | ----------- | --------------------- | ------------------------------------------------------------------------ |
+| Explicit positive   | T001-T004             | 12     | 12/12       | 0                     | Reliable activation                                                      |
+| Implicit positive   | T005-T014             | 30     | 30/30       | 0                     | Full recall on this harness                                              |
+| Near-miss / maybe   | T015-T022, T033, T034 | 30     | 8/30        | 0/30                  | Loads only for clarification, compressed, or direct execution            |
+| Negative            | T023-T032             | 30     | 0/30        | 0                     | Zero false positives                                                     |
+| Unobservable trials | —                     | 0/102  | —           | —                     | One transient tool-permission stall on T024 t3; rerun valid and recorded |
+
+Per-row loads (x/3) and behavior:
+
+| Row  | Type      | Loads | Behavior                                                                                                |
+| ---- | --------- | ----- | ------------------------------------------------------------------------------------------------------- |
+| T001 | explicit  | 3/3   | triggered                                                                                               |
+| T002 | explicit  | 3/3   | triggered                                                                                               |
+| T003 | explicit  | 3/3   | triggered                                                                                               |
+| T004 | explicit  | 3/3   | triggered                                                                                               |
+| T005 | implicit  | 3/3   | triggered                                                                                               |
+| T006 | implicit  | 3/3   | triggered                                                                                               |
+| T007 | implicit  | 3/3   | triggered                                                                                               |
+| T008 | implicit  | 3/3   | triggered                                                                                               |
+| T009 | implicit  | 3/3   | triggered                                                                                               |
+| T010 | implicit  | 3/3   | triggered                                                                                               |
+| T011 | implicit  | 3/3   | triggered                                                                                               |
+| T012 | implicit  | 3/3   | triggered                                                                                               |
+| T013 | implicit  | 3/3   | triggered                                                                                               |
+| T014 | implicit  | 3/3   | triggered                                                                                               |
+| T015 | near-miss | 0/3   | not_triggered/ordinary-answer, asked for the email text                                                 |
+| T016 | near-miss | 0/3   | not_triggered/clarified, asked several scattered questions rather than one                              |
+| T017 | near-miss | 0/3   | not_triggered/ordinary-answer, generic conflict advice                                                  |
+| T018 | near-miss | 0/3   | not_triggered/ordinary-answer, generic boundary advice                                                  |
+| T019 | near-miss | 3/3   | triggered/clarified, single skill question, no review                                                   |
+| T020 | near-miss | 0/3   | not_triggered/clarified, asked for the client message and stakes                                        |
+| T021 | near-miss | 0/3   | not_triggered/ordinary-answer, rewrite guidance                                                         |
+| T022 | near-miss | 0/3   | not_triggered/ordinary-answer, direct in-the-moment wording                                             |
+| T023 | negative  | 0/3   | not_triggered, normal literary summary                                                                  |
+| T024 | negative  | 0/3   | not_triggered, answered quotes directly                                                                 |
+| T025 | negative  | 0/3   | not_triggered, asked for the message text                                                               |
+| T026 | negative  | 0/3   | not_triggered, normal biography                                                                         |
+| T027 | negative  | 0/3   | not_triggered, asked for the source text                                                                |
+| T028 | negative  | 0/3   | not_triggered, generic leadership tips                                                                  |
+| T029 | negative  | 0/3   | not_triggered, normal definition                                                                        |
+| T030 | negative  | 0/3   | not_triggered, refused manipulation without the skill                                                   |
+| T031 | negative  | 0/3   | not_triggered, wrote the note directly                                                                  |
+| T032 | negative  | 0/3   | not_triggered, generic techniques                                                                       |
+| T033 | near-miss | 3/3   | triggered/compressed-only, observe-before-escalate with one sentence, 73-82 words                       |
+| T034 | near-miss | 2/3   | execution_only_gate on all 3 trials, direct message with one confirming sentence, no review scaffolding |
+
+Rows with 3/3 expected behavior: all explicit, all implicit, all negatives, and near-miss rows T015, T017, T018, T020, T021, T022. Mixed 2/3 on loads: T034 only, with correct output on all 3 trials. Concerning 1/3 or 0/3 against expectation: none.
+
+Interpretation notes, not corrections: T019 and T033 show the harness loads the skill and then correctly restrains itself, which is the desired near-miss shape rather than over-triggering. T034 shows catalog recognition without procedure activation on 2/3 trials; output was an appropriate bypass every time, so the load alone is not counted as a failure. T016 correctly avoided the full review but asked several scattered questions instead of one targeted question; that is a quality gap in the unskilled model, not a trigger failure, and is recorded as a future-work observation. No description, name, or instruction change follows from this generation.
+
 ## Initial Baseline Run Queue
 
 Completed in the recorded runs above. These were prioritized first because they cover the main user-value risks: whether the skill adds judgment beyond generic advice, whether it over-triggers on near-miss prompts, whether it refuses harmful manipulation without becoming abstract, and whether it stays inside its boundary when formal consequences are present.
